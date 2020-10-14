@@ -4,6 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogInActivity">
+    tools:context=".LogInActivity"
+    android:background="#ff6600">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fiserv_logo_in_log_in"
+            android:layout_width="100dp"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/fiserv_logo" />
+
+        <TextView
+            android:id="@+id/hello_text_view_in_log_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:text="Hello"
+            android:textColor="#FFFFFF"
+            android:textSize="45dp"
+            android:fontFamily="sans-serif"/>
+
+        <EditText
+            android:id="@+id/user_email_edit_text_log_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="198dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:text="Correo Electrónico"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif"
+            android:backgroundTint="#FFFFFF"/>
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
