@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class LogInActivity extends AppCompatActivity {
     private String language;
     private TextView helloTextView;
     private EditText enterUserEmailEditText,enterUserPasswordEditText;
+    private Button enterInformationButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class LogInActivity extends AppCompatActivity {
         helloTextView = findViewById(R.id.hello_text_view_in_log_in);
         enterUserEmailEditText = findViewById(R.id.user_email_edit_text_log_in);
         enterUserPasswordEditText = findViewById(R.id.user_password_edit_text_log_in);
+        enterInformationButton = findViewById(R.id.enter_button_log_in);
 
         //Setting the text of graphic components based on device language
         setTextForGraphicComponents();
@@ -49,13 +52,17 @@ public class LogInActivity extends AppCompatActivity {
             case ENGLISH_LANGUAGE:
                 helloTextView.setText("Hello");
                 enterUserEmailEditText.setText("E-mail");
+                enterInformationButton.setText("Enter");
             break;
             case SPANISH_LANGUAGE:
                 helloTextView.setText("Hola");
                 enterUserEmailEditText.setText("Correo Electrónico");
+                enterInformationButton.setText("Entrar");
             break;
             default:
                 helloTextView.setText("Hello");
+                enterUserEmailEditText.setText("E-mail");
+                enterInformationButton.setText("Enter");
         }
 
     }
