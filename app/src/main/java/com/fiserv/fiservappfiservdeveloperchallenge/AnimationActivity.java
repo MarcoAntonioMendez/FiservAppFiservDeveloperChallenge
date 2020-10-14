@@ -1,7 +1,9 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AnimationActivity extends AppCompatActivity {
+    public static final int TRANSITION = 5000;
+
     private Animation topAnimation,bottomAnimation;
     private ImageView fiservLogo;
     private TextView fiservMotto;
@@ -36,6 +40,16 @@ public class AnimationActivity extends AppCompatActivity {
         // Starting the animations
         fiservLogo.setAnimation(topAnimation);
         fiservMotto.setAnimation(bottomAnimation);
+
+        // This handler will start the LogInActivity when the animations are finished.
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run(){
+                Intent intent = new Intent(AnimationActivity.this,LogInActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        },TRANSITION);
 
         hideSystemUI();
     }
