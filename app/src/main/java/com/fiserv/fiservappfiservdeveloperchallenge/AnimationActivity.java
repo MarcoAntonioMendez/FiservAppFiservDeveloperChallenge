@@ -4,17 +4,22 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+/**
+ * The AnimationActivity class is in charge of the welcome animation for the user.
+ * It displays the Fiserv's Logo and its motto.
+ * When the animations on the logo and motto are finished, the LogInActivity starts automatically.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-13
+ */
 
 public class AnimationActivity extends AppCompatActivity {
     public static final int TRANSITION = 5000;
