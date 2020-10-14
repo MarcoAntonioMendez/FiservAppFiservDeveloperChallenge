@@ -18,11 +18,15 @@ public class LogInActivity extends AppCompatActivity {
     public static final String STATUS_BAR_COLOR = "#363636";
     public static final String ENGLISH_LANGUAGE = "en";
     public static final String SPANISH_LANGUAGE = "es";
+    public static final String USER_EMAIL_FOR_TESTING_PURPOSES = "admin@admin.com";
+    public static final String USER_PASSWORD_FOR_TESTING_PURPOSES = "admin";
+    public static final int INFORMATION_INCORRECT_SNACK_BAR_DURATION = 6000;
 
     private String language;
     private TextView helloTextView;
     private EditText enterUserEmailEditText,enterUserPasswordEditText;
     private Button enterInformationButton;
+    private Snackbar informationIncorrectSnackBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,41 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     /**
+     * Method called when user presses the button that says "ENTER", the enterInformationButton
+     * It checks if user email and password are correct so the user can enter Fiserv's System.
+     * @param view - enterInformationButton, a Button.
+     */
+    public void accessFiservSystem(View view){
+        if(isUserEnteredInformationCorrect()){
+
+        }else{
+            // Inform user he/she didn't enter the correct information
+            informationIncorrectSnackBar.show();
+        }
+    }
+
+    /**
+     * This method checks if user information is correct connecting to a database.
+     *
+     * WARNING:
+     *      For the Fiserv Developer Challenge, this method will not ACTUALLY retrieve information
+     *      from a remote database, since it's a hackathon, the "TrekingDevs" team didn't want to
+     *      spend any money in an actual remote database.
+     *      Although this method is intended to do so.
+     * @return True or False, signifying the user's information is correct or incorrect
+     */
+    private boolean isUserEnteredInformationCorrect(){
+        String userEmail = enterUserEmailEditText.getText().toString();
+        String userPassword = enterUserPasswordEditText.getText().toString();
+
+        if(userEmail.equals(USER_EMAIL_FOR_TESTING_PURPOSES) &&
+                userPassword.equals(USER_PASSWORD_FOR_TESTING_PURPOSES)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * According to language, graphic components are assigned the text.
      * In case the device's language is not supported, the text will be assigned to english.
      * Languages Supported: English, Spanish.
@@ -53,16 +92,26 @@ public class LogInActivity extends AppCompatActivity {
                 helloTextView.setText("Hello");
                 enterUserEmailEditText.setText("E-mail");
                 enterInformationButton.setText("Enter");
+                informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
+                        "Sorry :(, your e-mail or password are incorrect, please try again.",
+                        INFORMATION_INCORRECT_SNACK_BAR_DURATION);
             break;
             case SPANISH_LANGUAGE:
                 helloTextView.setText("Hola");
                 enterUserEmailEditText.setText("Correo Electrónico");
                 enterInformationButton.setText("Entrar");
+                informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
+                        "Lo sentimos :(, su correo electrónico o contraseña son incorrectos," +
+                             " por favor inténtelo de nuevo.",
+                        INFORMATION_INCORRECT_SNACK_BAR_DURATION);
             break;
             default:
                 helloTextView.setText("Hello");
                 enterUserEmailEditText.setText("E-mail");
                 enterInformationButton.setText("Enter");
+                informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
+                        "Sorry :(, your e-mail or password are incorrect, please try again.",
+                        INFORMATION_INCORRECT_SNACK_BAR_DURATION);
         }
 
     }

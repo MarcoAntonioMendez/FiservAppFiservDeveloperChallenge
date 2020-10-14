@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/log_in_coordinator_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -44,7 +46,7 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp"
             android:fontFamily="sans-serif"
-            android:backgroundTint="#FFFFFF"/>
+            android:backgroundTint="#FFFFFF" />
 
         <EditText
             android:id="@+id/user_password_edit_text_log_in"
@@ -71,7 +73,8 @@
             android:fontFamily="sans-serif"
             android:textColor="#FFFFFF"
             android:background="#FF7700"
-            android:textSize="35dp"/>
+            android:textSize="35dp"
+            android:onClick="accessFiservSystem"/>
 
     </RelativeLayout>
 
