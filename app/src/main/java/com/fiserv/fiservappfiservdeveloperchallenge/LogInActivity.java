@@ -20,7 +20,7 @@ public class LogInActivity extends AppCompatActivity {
 
     private String language;
     private TextView helloTextView;
-    private EditText enterUserEmailEditText;
+    private EditText enterUserEmailEditText,enterUserPasswordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class LogInActivity extends AppCompatActivity {
 
         helloTextView = findViewById(R.id.hello_text_view_in_log_in);
         enterUserEmailEditText = findViewById(R.id.user_email_edit_text_log_in);
+        enterUserPasswordEditText = findViewById(R.id.user_password_edit_text_log_in);
 
         //Setting the text of graphic components based on device language
         setTextForGraphicComponents();
