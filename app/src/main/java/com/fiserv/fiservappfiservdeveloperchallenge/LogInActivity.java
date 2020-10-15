@@ -1,5 +1,6 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -55,7 +56,9 @@ public class LogInActivity extends AppCompatActivity {
      */
     public void accessFiservSystem(View view){
         if(isUserEnteredInformationCorrect()){
-
+            Intent intent = new Intent(LogInActivity.this,OperationsActivity.class);
+            startActivity(intent);
+            finish();
         }else{
             // Inform user he/she didn't enter the correct information
             informationIncorrectSnackBar.show();
