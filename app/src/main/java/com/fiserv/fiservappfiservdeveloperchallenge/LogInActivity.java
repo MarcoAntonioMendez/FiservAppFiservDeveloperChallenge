@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -119,6 +120,25 @@ public class LogInActivity extends AppCompatActivity {
                         INFORMATION_INCORRECT_SNACK_BAR_DURATION);
         }
 
+        // Clears the e-mail EditText when user touches it.
+        enterUserEmailEditText.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View arg0, MotionEvent arg1)
+            {
+                enterUserEmailEditText.setText("");
+                return false;
+            }
+        });
+
+        // Clears the password EditText when user touches it.
+        enterUserPasswordEditText.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View arg0, MotionEvent arg1)
+            {
+                enterUserPasswordEditText.setText("");
+                return false;
+            }
+        });
     }
 
 }
