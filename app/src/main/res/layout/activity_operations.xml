@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OperationsActivity">
+    tools:context=".OperationsActivity"
+    android:background="#ff6600">
 
+    <TextView
+        android:id="@+id/greet_user_text_view_operations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="25dp"/>
 </android.support.design.widget.CoordinatorLayout>

@@ -19,8 +19,6 @@ import java.util.Locale;
 public class LogInActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
     public static final String STATUS_BAR_COLOR = "#363636";
-    public static final String ENGLISH_LANGUAGE = "en";
-    public static final String SPANISH_LANGUAGE = "es";
     public static final String USER_EMAIL_FOR_TESTING_PURPOSES = "admin@admin.com";
     public static final String USER_PASSWORD_FOR_TESTING_PURPOSES = "admin";
     public static final int INFORMATION_INCORRECT_SNACK_BAR_DURATION = 6000;
@@ -97,7 +95,7 @@ public class LogInActivity extends AppCompatActivity {
      */
     private void setTextForGraphicComponents(){
         switch(language){
-            case ENGLISH_LANGUAGE:
+            case AppGlobalConstants.ENGLISH_LANGUAGE:
                 helloTextView.setText("Hello");
                 enterUserEmailEditText.setText("E-mail");
                 enterInformationButton.setText("Enter");
@@ -105,7 +103,7 @@ public class LogInActivity extends AppCompatActivity {
                         "Sorry :(, your e-mail or password are incorrect, please try again.",
                         INFORMATION_INCORRECT_SNACK_BAR_DURATION);
             break;
-            case SPANISH_LANGUAGE:
+            case AppGlobalConstants.SPANISH_LANGUAGE:
                 helloTextView.setText("Hola");
                 enterUserEmailEditText.setText("Correo Electrónico");
                 enterInformationButton.setText("Entrar");
@@ -142,6 +140,11 @@ public class LogInActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 
 }
