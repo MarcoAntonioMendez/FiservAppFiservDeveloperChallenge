@@ -57,7 +57,10 @@ public class LogInActivity extends AppCompatActivity {
      */
     public void accessFiservSystem(View view){
         if(isUserEnteredInformationCorrect()){
+            // Starting the system.
             Intent intent = new Intent(LogInActivity.this,OperationsActivity.class);
+            // The hardcoded string "Marco" is for testing, since there is no database at this point
+            intent.putExtra(OperationsActivity.USER_NAME,"Marco");
             startActivity(intent);
             finish();
         }else{
