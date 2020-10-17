@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OperationsActivity"
-    android:background="#ff6600">
+    android:background="#ff6600"
+    tools:context=".OperationsActivity">
 
     <TextView
         android:id="@+id/greet_user_text_view_operations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
         android:text="TextView"
         android:textColor="#FFFFFF"
-        android:fontFamily="sans-serif"
-        android:textSize="25dp"/>
+        android:textSize="35dp" />
+
+    <ImageView
+        android:id="@+id/operations_transfer_money_icon"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_marginTop="55dp"
+        app:srcCompat="@drawable/operations_activity_transfer_icon" />
+
+    <TextView
+        android:id="@+id/operations_transfer_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:gravity="center_horizontal"
+        android:text="Transferir"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
 </android.support.design.widget.CoordinatorLayout>

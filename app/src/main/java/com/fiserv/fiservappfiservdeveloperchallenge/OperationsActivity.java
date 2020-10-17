@@ -18,7 +18,7 @@ public class OperationsActivity extends AppCompatActivity {
     public static final String USER_NAME = "USER_NAME";
 
     private String userName,language;
-    private TextView greetUserTextView;
+    private TextView greetUserTextView,transferTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,9 @@ public class OperationsActivity extends AppCompatActivity {
 
         language = Locale.getDefault().getLanguage();
 
+        // Getting graphic components from xml file
         greetUserTextView = findViewById(R.id.greet_user_text_view_operations);
+        transferTextView = findViewById(R.id.operations_transfer_text_view);
 
         // Getting the userName
         userName = getIntent().getExtras().getString(USER_NAME);
@@ -47,12 +49,15 @@ public class OperationsActivity extends AppCompatActivity {
         switch(language){
             case AppGlobalConstants.ENGLISH_LANGUAGE:
                 greetUserTextView.setText("Hello, " + userName);
+                transferTextView.setText("Transfer");
             break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 greetUserTextView.setText("Hola, " + userName);
+                transferTextView.setText("Transferir");
             break;
             default:
                 greetUserTextView.setText("Hello, " + userName);
+                transferTextView.setText("Transfer");
         }
     }
 
