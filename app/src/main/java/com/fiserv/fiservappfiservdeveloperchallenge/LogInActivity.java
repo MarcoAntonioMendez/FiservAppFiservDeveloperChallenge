@@ -24,6 +24,7 @@ public class LogInActivity extends AppCompatActivity {
     public static final int INFORMATION_INCORRECT_SNACK_BAR_DURATION = 6000;
 
     private String language;
+    private boolean userEmailEditTextClearedOnce,userPasswordEditTextClearedOnce;
     private TextView helloTextView;
     private EditText enterUserEmailEditText,enterUserPasswordEditText;
     private Button enterInformationButton;
@@ -36,6 +37,9 @@ public class LogInActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setNavigationBarColor(Color.parseColor(NAVIGATION_BAR_COLOR));
         getWindow().setStatusBarColor(Color.parseColor(STATUS_BAR_COLOR));
+
+        userEmailEditTextClearedOnce = false;
+        userPasswordEditTextClearedOnce = false;
 
         language = Locale.getDefault().getLanguage();
 
@@ -126,7 +130,10 @@ public class LogInActivity extends AppCompatActivity {
         {
             public boolean onTouch(View arg0, MotionEvent arg1)
             {
-                enterUserEmailEditText.setText("");
+                if(!userEmailEditTextClearedOnce){
+                    userEmailEditTextClearedOnce = true;
+                    enterUserEmailEditText.setText("");
+                }
                 return false;
             }
         });
@@ -136,7 +143,10 @@ public class LogInActivity extends AppCompatActivity {
         {
             public boolean onTouch(View arg0, MotionEvent arg1)
             {
-                enterUserPasswordEditText.setText("");
+                if(!userPasswordEditTextClearedOnce){
+                    userPasswordEditTextClearedOnce = true;
+                    enterUserPasswordEditText.setText("");
+                }
                 return false;
             }
         });
