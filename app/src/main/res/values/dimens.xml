@@ -1,4 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fiserv_motto">30dp</dimen>
+    <dimen name="operations_accounts_text_size">10dp</dimen>
+    <dimen name="operations_accounts_text_size_for_card_numbers">8dp</dimen>
+    <dimen name="transparent_block_text_size">5dp</dimen>
 </resources>
