@@ -61,5 +61,12 @@
             android:orientation="vertical"/>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/operations_plus_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/plus_sign"
+        android:onClick="startCompleteMenuActivity"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

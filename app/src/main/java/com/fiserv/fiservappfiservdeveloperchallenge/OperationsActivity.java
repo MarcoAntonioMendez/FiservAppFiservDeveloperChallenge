@@ -1,5 +1,6 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -26,7 +27,7 @@ public class OperationsActivity extends AppCompatActivity {
     public static final String TRANSPARENT_TEXT_VIEW_BACKGROUND_COLOR = "#FF6600";
     public static final String USER_NAME = "USER_NAME";
 
-    private String userName,language;
+    private String userName,language,userEmail;
     private TextView greetUserTextView,transferTextView,accountsTextView;
     private LinearLayout accountsLinearLayout;
 
@@ -48,11 +49,23 @@ public class OperationsActivity extends AppCompatActivity {
 
         // Getting the userName
         userName = getIntent().getExtras().getString(USER_NAME);
+        userEmail = getIntent().getExtras().getString(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT);
 
         setTextForGraphicComponents();
 
         // Getting the user's accounts cards
         getUsersAccountsCards();
+    }
+
+    /**
+     * When user touches the plus sign, a whole activity will show offering the users all the
+     * different options he/she can make in the FiservApp
+     * @param view - ImageView plusSign.
+     */
+    public void startCompleteMenuActivity(View view){
+        Intent intent = new Intent(this,CompleteMenu.class);
+        intent.putExtra(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT,userEmail);
+        startActivity(intent);
     }
 
     /**
@@ -313,6 +326,11 @@ public class OperationsActivity extends AppCompatActivity {
                 transferTextView.setText("Transfer");
                 accountsTextView.setText("Your Accounts");
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 
 }

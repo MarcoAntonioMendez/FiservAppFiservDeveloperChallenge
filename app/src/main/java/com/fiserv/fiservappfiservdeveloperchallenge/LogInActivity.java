@@ -63,6 +63,8 @@ public class LogInActivity extends AppCompatActivity {
             Intent intent = new Intent(LogInActivity.this,OperationsActivity.class);
             // The hardcoded string "Marco" is for testing, since there is no database at this point
             intent.putExtra(OperationsActivity.USER_NAME,"Marco");
+            intent.putExtra(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT,
+                            enterUserEmailEditText.getText().toString());
             startActivity(intent);
             finish();
         }else{
