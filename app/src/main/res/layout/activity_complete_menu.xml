@@ -15,7 +15,286 @@
             android:id="@+id/complete_menu_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical">
+
+            <!-- Payments section ************************************************************** -->
+            <TextView
+                android:id="@+id/payments_tag_complete_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pagos"
+                android:fontFamily="sans-serif"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:background="#ff6600"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/schedule_payment_icon_in_complete_menu"/>
+                    <TextView
+                        android:id="@+id/schedule_payment_in_complete_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agendar Pago"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25dp"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC0C0"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/my_payments_icon_in_complete_menu"/>
+                    <TextView
+                        android:id="@+id/my_schedule_payments_in_complete_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mis Pagos Agendados"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25dp"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/payment_history_icon_in_complete_menu"/>
+            <TextView
+                android:id="@+id/history_payments_in_complete_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mi Historial de Pagos"
+                android:fontFamily="sans-serif"
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"/>
+            <!-- Payments section-End ********************************************************** -->
+
+            <!-- Customers section ************************************************************* -->
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:background="#ff6600"/>
+            <TextView
+                android:id="@+id/customers_tag_complete_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clientes"
+                android:fontFamily="sans-serif"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:background="#ff6600"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/generate_payment_url_icon_in_complete_menu"/>
+                    <TextView
+                        android:id="@+id/generate_payment_url_in_complete_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agendar Pago"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25dp"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC0C0"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/my_customers_icon_in_complete_menu"/>
+                    <TextView
+                        android:id="@+id/my_customers_in_complete_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mis Pagos Agendados"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25dp"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:background="#ff6600"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/register_new_customer_icon_in_complete_menu"/>
+            <TextView
+                android:id="@+id/register_new_customer_in_complete_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar Nueva Cliente."
+                android:fontFamily="sans-serif"
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"/>
+            <!-- Customers section-End ********************************************************* -->
+
+            <!-- Profile *********************************************************** -->
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:background="#ff6600"/>
+            <TextView
+                android:id="@+id/profile_tag_complete_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:fontFamily="sans-serif"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:background="#ff6600"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/register_new_account_icon_in_complete_menu"/>
+            <TextView
+                android:id="@+id/register_new_account_in_complete_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar una Nueva Cuenta"
+                android:fontFamily="sans-serif"
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"/>
+            <!-- Profile-END ******************************************************* -->
+
+            <!-- Communicate section *********************************************************** -->
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:background="#ff6600"/>
+            <TextView
+                android:id="@+id/communicate_tag_complete_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contáctanos"
+                android:fontFamily="sans-serif"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:background="#ff6600"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/contact_fiserv_representative_icon_in_complete_menu"/>
+                    <TextView
+                        android:id="@+id/contact_fiserv_representative_in_complete_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ayuda"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25dp"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:background="#FFC0C0"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/why_fiserv_icon_in_complete_menu"/>
+                    <TextView
+                        android:id="@+id/why_fiserv_in_complete_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿Por Qué Fiserv?"
+                        android:fontFamily="sans-serif"
+                        android:textSize="25dp"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:background="#ff6600"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rate_us_icon_in_complete_menu"/>
+            <TextView
+                android:id="@+id/rate_us_in_complete_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Califícanos"
+                android:fontFamily="sans-serif"
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"/>
+            <!-- Communicate section-END ******************************************************* -->
+
+
+        </LinearLayout>
     </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
