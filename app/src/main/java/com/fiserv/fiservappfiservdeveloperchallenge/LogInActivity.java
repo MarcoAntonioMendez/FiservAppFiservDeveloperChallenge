@@ -53,6 +53,26 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     /**
+     * Method called to start Activity RegisterNewFiservAppUser, the user will be able to create an
+     * account over there.
+     * @param view - The TextView dont_have_an_account_register_text_view
+     */
+    public void startRegisterNewFiservAppUserActivity(View view){
+        Intent intent = new Intent(this,RegisterNewFiservAppUser.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Method called to start Activity ForgotMyPasswordActivity, the user will be able to follow a
+     * protocol to renew his/her password.
+     * @param view - The TextView i_forgot_my_password_text_view
+     */
+    public void startForgotMyPasswordActivity(View view){
+        Intent intent = new Intent(this,ForgotMyPasswordActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * Method called when user presses the button that says "ENTER", the enterInformationButton
      * It checks if user email and password are correct so the user can enter Fiserv's System.
      * @param view - enterInformationButton, a Button.

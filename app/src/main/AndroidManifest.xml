@@ -30,6 +30,14 @@
         <activity
             android:name=".CompleteMenu"
             android:label="@string/title_activity_complete_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RegisterNewFiservAppUser"
+            android:label="@string/title_activity_register_new_fiserv_app_user"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ForgotMyPasswordActivity"
+            android:label="@string/title_activity_forgot_my_password"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

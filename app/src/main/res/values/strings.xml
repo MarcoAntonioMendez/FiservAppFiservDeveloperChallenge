@@ -4,4 +4,6 @@
     <string name="title_activity_log_in">LogInActivity</string>
     <string name="title_activity_operations">OperationsActivity</string>
     <string name="title_activity_complete_menu">CompleteMenu</string>
+    <string name="title_activity_register_new_fiserv_app_user">RegisterNewFiservAppUser</string>
+    <string name="title_activity_forgot_my_password">ForgotMyPasswordActivity</string>
 </resources>
