@@ -7,6 +7,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +45,78 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
         registerButton = findViewById(R.id.register_me_button_in_register_new_fiserv_app_user);
 
         setTextForGraphicComponents();
+
+        setListenerForEditTexts();
+    }
+
+    /**
+     * Sets the a listener for each editText, those listener will bring the editTexts back to their
+     * initial states if they are left empty after user tried to type something.
+     */
+    private void setListenerForEditTexts(){
+        String englishText,spanishText;
+
+        // Setting the listeners for each editText
+        englishText = "Full Legal Name";spanishText = "Nombre Completo";
+        setEditTextListenerIndividually(completeNameEditText,englishText,spanishText);
+
+        englishText = "E-mail";spanishText = "Correo Electrónico";
+        setEditTextListenerIndividually(emailEditText,englishText,spanishText);
+
+        englishText = "Phone Number";spanishText = "Número Telefónico";
+        setEditTextListenerIndividually(phoneNumberEditText,englishText,spanishText);
+
+        englishText = "Password";spanishText = "Contraseña";
+        setEditTextListenerIndividually(passwordEditText,englishText,spanishText);
+
+        englishText = "Repeat Password";spanishText = "Repetir Contraseña";
+        setEditTextListenerIndividually(repeatPasswordEditText,englishText,spanishText);
+    }
+
+    /**
+     * Sets the listener to an specific editText, if the user is typing on the editText and then
+     * leaves it empty, that editText will go back to its initial state.
+     * @param editText - The edit text to set its focus listener.
+     * @param englishText - The text that should be placed in an empty editText (in english).
+     * @param spanishText - The text that should be placed in an empty editText (in spanish).
+     */
+    private void setEditTextListenerIndividually(final EditText editText,final String englishText,
+                                                 final String spanishText){
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus){
+                if(!hasFocus){
+                    // Checking if user left the editText empty
+                    if(editText.getText().toString().isEmpty()){
+                        switch(Locale.getDefault().getLanguage()){
+                            case AppGlobalConstants.ENGLISH_LANGUAGE:
+                                editText.setText(englishText);
+                                break;
+                            case AppGlobalConstants.SPANISH_LANGUAGE:
+                                editText.setText(spanishText);
+                                break;
+                            default:
+                                editText.setText(englishText);
+                        }
+
+                        // If that editText was for passwords, it goes back to normal input
+                        if(editText.equals(passwordEditText)){
+                            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        }else if(editText.equals(repeatPasswordEditText)){
+                            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        }
+                    }
+                }else{
+
+                    // If the user is typing his/her password, the input type should change.
+                    if(editText.equals(passwordEditText)){
+                        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }else if(editText.equals(repeatPasswordEditText)){
+                        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }
+                }
+            }
+        });
     }
 
     /**
