@@ -27,6 +27,7 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
     private EditText completeNameEditText,emailEditText,phoneNumberEditText,passwordEditText;
     private EditText repeatPasswordEditText;
     private Snackbar passwordsDontMatchtSnackBar;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
         phoneNumberEditText = findViewById(R.id.phone_number_register_new_fiserv_app_user);
         passwordEditText = findViewById(R.id.password_register_new_fiserv_app_user);
         repeatPasswordEditText = findViewById(R.id.repeat_password_register_new_fiserv_app_user);
+        registerButton = findViewById(R.id.register_me_button_in_register_new_fiserv_app_user);
 
         // Sets the text for all graphic components according to the language
         setTextForGraphicComponents();
@@ -168,6 +170,7 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                         "Sorry :(, it looks like the passwords you entered don't match, please" +
                                 " make sure they are the same.",
                         PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
+                registerButton.setText("Sign Me Up!");
             break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 welcomeTextView.setText("Bienvenido");
@@ -180,6 +183,7 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                 passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
                         "Lo sentimos :(, parece ser que las contraseñas que ingresó no son iguales.",
                         PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
+                registerButton.setText("¡Regístrame!");
             break;
             default:
                 welcomeTextView.setText("Welcome");
@@ -193,6 +197,7 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                         "Sorry :(, it looks like the passwords you entered don't match, please" +
                                 " make sure they are the same.",
                         PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
+                registerButton.setText("Sign Me Up!");
         }
     }
 
