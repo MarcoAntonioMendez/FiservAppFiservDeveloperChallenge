@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/register_new_fiserv_app_user_coordinator_layout_id"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -104,7 +106,8 @@
         android:layout_marginTop="520dp"
         android:text="¡Regístrame!"
         android:textColor="#FFFFFF"
-        android:background="#FF7700"/>
+        android:background="#FF7700"
+        android:onClick="registerNewFiservAppUser"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

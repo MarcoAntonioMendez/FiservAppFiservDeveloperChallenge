@@ -20,11 +20,13 @@ import java.util.Locale;
 public class RegisterNewFiservAppUser extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
     public static final String STATUS_BAR_COLOR = "#363636";
+    public static final int PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION = 4000;
 
     private TextView welcomeTextView,awesomeExperienceTextView;
     private EditText completeNameEditText,emailEditText,phoneNumberEditText,passwordEditText;
     private EditText repeatPasswordEditText;
     private Button registerButton;
+    private Snackbar passwordsDontMatchtSnackBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,28 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
         repeatPasswordEditText = findViewById(R.id.repeat_password_register_new_fiserv_app_user);
         registerButton = findViewById(R.id.register_me_button_in_register_new_fiserv_app_user);
 
+        // Sets the text for all graphic components according to the language
         setTextForGraphicComponents();
 
         setListenerForEditTexts();
+    }
+
+    /**
+     * Button pressed when user's data is ready to be registered.
+     * It will check if the passwords are correct.
+     *
+     * WARNING: This method is supposed to do some queries to a remote database, since this app was
+     * made for the FiservDeveloperChallenge, the team "TrekingDevs" did not want to spend any money
+     * in a remote database, so right now it justs checks that the passwords are right and then it
+     * transitions to OperationsActivity
+     * @param view - The button registerButton
+     */
+    public void registerNewFiservAppUser(View view){
+        // Checking if the content in passwordEditText and repeatPasswordEditText is the same.
+        if(!passwordEditText.getText().toString().equals(repeatPasswordEditText.getText().toString())){
+            passwordsDontMatchtSnackBar.show();
+            return;
+        }
     }
 
     /**
@@ -135,6 +156,10 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                 phoneNumberEditText.setText("Phone Number");
                 passwordEditText.setText("Password");
                 repeatPasswordEditText.setText("Repeat Password");
+                passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
+                        "Sorry :(, it looks like the passwords you entered don't match, please" +
+                                " make sure they are the same.",
+                        PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
             break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 welcomeTextView.setText("Bienvenido");
@@ -144,6 +169,9 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                 phoneNumberEditText.setText("Número Telefónico");
                 passwordEditText.setText("Contraseña");
                 repeatPasswordEditText.setText("Repetir Contraseña");
+                passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
+                        "Lo sentimos :(, parece ser que las contraseñas que ingresó no son iguales.",
+                        PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
             break;
             default:
                 welcomeTextView.setText("Welcome");
@@ -153,6 +181,10 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                 phoneNumberEditText.setText("Phone Number");
                 passwordEditText.setText("Password");
                 repeatPasswordEditText.setText("Repeat Password");
+                passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
+                        "Sorry :(, it looks like the passwords you entered don't match, please" +
+                                " make sure they are the same.",
+                        PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
         }
     }
 
