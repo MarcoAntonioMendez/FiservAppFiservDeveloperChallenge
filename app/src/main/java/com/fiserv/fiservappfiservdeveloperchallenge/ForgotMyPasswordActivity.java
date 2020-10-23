@@ -1,5 +1,6 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -42,6 +43,14 @@ public class ForgotMyPasswordActivity extends AppCompatActivity {
     }
 
     /**
+     *
+     */
+    public void sendEmailAndStartLogInActivity(View view){
+       Intent intent = new Intent(this,LogInActivity.class);
+       startActivity(intent);
+    }
+
+    /**
      * Sets the text for all graphic components according to the language.
      * Supported languages: English, Spanish.
      */
@@ -68,6 +77,31 @@ public class ForgotMyPasswordActivity extends AppCompatActivity {
                 emailEditText.setText("E-mail");
                 sendEmailButton.setText("Send");
         }
+
+        // Setting a listener for emailEditText
+        emailEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus){
+                if(hasFocus){
+                   switch(Locale.getDefault().getLanguage()){
+                       case AppGlobalConstants.ENGLISH_LANGUAGE:
+                           if(emailEditText.getText().toString().equals("E-mail")){
+                               emailEditText.setText("");
+                           }
+                       break;
+                       case AppGlobalConstants.SPANISH_LANGUAGE:
+                           if(emailEditText.getText().toString().equals("Correo Electrónico")){
+                               emailEditText.setText("");
+                           }
+                       break;
+                       default:
+                           if(emailEditText.getText().toString().equals("E-mail")){
+                               emailEditText.setText("");
+                           }
+                   }
+                }
+            }
+        });
     }
 
 }
