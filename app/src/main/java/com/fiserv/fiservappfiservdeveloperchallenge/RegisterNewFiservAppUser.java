@@ -1,5 +1,6 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,7 +26,6 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
     private TextView welcomeTextView,awesomeExperienceTextView;
     private EditText completeNameEditText,emailEditText,phoneNumberEditText,passwordEditText;
     private EditText repeatPasswordEditText;
-    private Button registerButton;
     private Snackbar passwordsDontMatchtSnackBar;
 
     @Override
@@ -44,7 +44,6 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
         phoneNumberEditText = findViewById(R.id.phone_number_register_new_fiserv_app_user);
         passwordEditText = findViewById(R.id.password_register_new_fiserv_app_user);
         repeatPasswordEditText = findViewById(R.id.repeat_password_register_new_fiserv_app_user);
-        registerButton = findViewById(R.id.register_me_button_in_register_new_fiserv_app_user);
 
         // Sets the text for all graphic components according to the language
         setTextForGraphicComponents();
@@ -68,6 +67,15 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
             passwordsDontMatchtSnackBar.show();
             return;
         }
+
+        // Starting OperationsActivity
+        Intent intent = new Intent(this,OperationsActivity.class);
+        // The hardcoded string "Marco" is for testing, since there is no database at this point
+        intent.putExtra(OperationsActivity.USER_NAME,"Marco");
+        intent.putExtra(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT,
+                        emailEditText.getText().toString());
+        startActivity(intent);
+        finish();
     }
 
     /**
