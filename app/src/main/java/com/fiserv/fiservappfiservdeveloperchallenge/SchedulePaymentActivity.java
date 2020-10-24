@@ -18,6 +18,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
 
     private String userEmail;
     private TextView scheduleYourPaymentTitleTextView,beautifulMessageTextView;
+    private TextView schedulePaymentFirstInstructionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
         // Getting graphic elements references from XML file
         scheduleYourPaymentTitleTextView = findViewById(R.id.schedule_your_payment_title_in_schedule_payment_activity);
         beautifulMessageTextView = findViewById(R.id.beautiful_message_in_schedule_payment_activity);
+        schedulePaymentFirstInstructionTextView = findViewById(R.id.schedule_payment_first_instruction_in_schedule_payment_activity);
 
         // Setting texts for graphic elements
         setTextForGraphicElements();
@@ -48,14 +50,19 @@ public class SchedulePaymentActivity extends AppCompatActivity {
             case AppGlobalConstants.ENGLISH_LANGUAGE:
                 scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
                 beautifulMessageTextView.setText(R.string.text_for_in_english_beautiful_message_in_schedule_payment_activity);
+                schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
             break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 scheduleYourPaymentTitleTextView.setText("Agenda tu Pago");
                 beautifulMessageTextView.setText(R.string.text_for_in_spanish_beautiful_message_in_schedule_payment_activity);
-            break;
+                schedulePaymentFirstInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_first_instruction_in_schedule_payment_activity);
+
+                break;
             default:
                 scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
                 beautifulMessageTextView.setText(R.string.text_for_in_english_beautiful_message_in_schedule_payment_activity);
+                schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
+
         }
     }
 

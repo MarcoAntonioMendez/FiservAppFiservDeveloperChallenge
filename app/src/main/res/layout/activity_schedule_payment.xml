@@ -27,5 +27,15 @@
         android:fontFamily="sans-serif"
         android:textSize="18dp"/>
 
+    <TextView
+        android:id="@+id/schedule_payment_first_instruction_in_schedule_payment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Primero: Elige la fecha en la que desees que el pago se efectúe."
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
 
 </android.support.design.widget.CoordinatorLayout>
