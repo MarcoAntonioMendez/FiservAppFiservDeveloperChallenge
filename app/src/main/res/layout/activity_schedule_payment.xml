@@ -73,5 +73,30 @@
         android:layout_marginLeft="180dp"
         android:backgroundTint="#ffffff"/>
 
+    <TextView
+        android:id="@+id/schedule_payment_second_instruction_in_schedule_payment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="Segundo: Elige la cuenta de donde quieres que el pago se extraiga."
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="10dp"
+        android:background="#DE5900">
+        <LinearLayout
+            android:id="@+id/accounts_container_in_schedule_payment_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

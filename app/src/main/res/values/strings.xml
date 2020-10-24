@@ -13,7 +13,8 @@
     <string name="text_for_in_spanish_beautiful_message_in_schedule_payment_activity">Deja que Fiserv se encarge de tus pagos recurrentes para que no te tengas que preocupar por ellos.</string>
     <string name="text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity">First: Choose the date in which you wish the payment to be carried out.</string>
     <string name="text_in_spanish_for_schedule_payment_first_instruction_in_schedule_payment_activity">Primero: Elige la fecha en la que desees que el pago de efectúe.</string>
-
+    <string name="text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity">Second: Choose the account from which the payment to be withdrawn</string>
+    <string name="text_in_spanish_for_schedule_payment_second_instruction_in_schedule_payment_activity">Segundo: Elige la cuenta de donde quieres que el pago se extraiga.</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>
