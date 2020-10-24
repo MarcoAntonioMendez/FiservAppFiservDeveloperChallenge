@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="periodicity_in_english">
+        <item>Each Month</item>
+        <item>Every Two Months</item>
+        <item>Every Three Months</item>
+        <item>Every Four Months</item>
+        <item>Every Five Months</item>
+        <item>Every Six Months</item>
+        <item>Every Seven Months</item>
+        <item>Every Eight Months</item>
+        <item>Every Nine Months</item>
+        <item>Every Ten Months</item>
+        <item>Every Eleven Months</item>
+        <item>Every Year</item>
+    </string-array>
+</resources>

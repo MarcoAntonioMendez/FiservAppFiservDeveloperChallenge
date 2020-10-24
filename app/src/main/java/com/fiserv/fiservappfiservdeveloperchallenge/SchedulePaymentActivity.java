@@ -36,8 +36,8 @@ public class SchedulePaymentActivity extends AppCompatActivity {
     private String userEmail;
     private TextView scheduleYourPaymentTitleTextView,beautifulMessageTextView;
     private TextView schedulePaymentFirstInstructionTextView,schedulePaymentSecondInstructionTextView;
-    private TextView schedulePaymentThirdInstructionTextView;
-    private Spinner monthSpinner,daySpinner;
+    private TextView schedulePaymentThirdInstructionTextView,periodicityTextView,dayTextView;
+    private Spinner periodicitySpinner,daySpinner;
     private LinearLayout accountsLinearLayout,customersLinearLayout;
     private Snackbar paymentScheduledSnackBar;
 
@@ -55,7 +55,9 @@ public class SchedulePaymentActivity extends AppCompatActivity {
         scheduleYourPaymentTitleTextView = findViewById(R.id.schedule_your_payment_title_in_schedule_payment_activity);
         beautifulMessageTextView = findViewById(R.id.beautiful_message_in_schedule_payment_activity);
         schedulePaymentFirstInstructionTextView = findViewById(R.id.schedule_payment_first_instruction_in_schedule_payment_activity);
-        monthSpinner = findViewById(R.id.month_spinner_in_schedule_payment_activity);
+        periodicityTextView = findViewById(R.id.periodicity_tag_in_schedule_payment_activity);
+        periodicitySpinner = findViewById(R.id.periodicity_spinner_in_schedule_payment_activity);
+        dayTextView = findViewById(R.id.day_tag_in_schedule_payment_activity);
         daySpinner = findViewById(R.id.day_spinner_in_schedule_payment_activity);
         schedulePaymentSecondInstructionTextView = findViewById(R.id.schedule_payment_second_instruction_in_schedule_payment_activity);
         accountsLinearLayout = findViewById(R.id.accounts_container_in_schedule_payment_activity);
@@ -433,7 +435,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
      */
     private void setTextForGraphicElements(){
         String language = Locale.getDefault().getLanguage();
-        ArrayAdapter<CharSequence> monthSpinnerAdapter = null;
+        ArrayAdapter<CharSequence> periodicitySpinnerAdapter = null;
 
         ArrayAdapter<CharSequence> daySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.days_for_spinner, android.R.layout.simple_spinner_item);
         daySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -444,38 +446,44 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
                 beautifulMessageTextView.setText(R.string.text_for_in_english_beautiful_message_in_schedule_payment_activity);
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
-                monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_english, android.R.layout.simple_spinner_item);
+                periodicitySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.periodicity_in_english, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity);
                 schedulePaymentThirdInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity);
                 paymentScheduledSnackBar = Snackbar.make(findViewById(R.id.schedule_payment_coordinator_layout),
                         R.string.text_in_english_for_payment_scheduled_snack_bar_in_schedule_payment_activity,
                         PAYMENT_SCHEDULED_SNACK_BAR_DURATION);
+                periodicityTextView.setText(R.string.text_in_english_for_periodicity_tag_in_schedule_payment_activity);
+                dayTextView.setText(R.string.text_in_english_for_day_tag_in_schedule_payment_activity);
                 break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 scheduleYourPaymentTitleTextView.setText("Agenda tu Pago");
                 beautifulMessageTextView.setText(R.string.text_for_in_spanish_beautiful_message_in_schedule_payment_activity);
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_first_instruction_in_schedule_payment_activity);
-                monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_spanish, android.R.layout.simple_spinner_item);
+                periodicitySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.periodicity_in_spanish, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_second_instruction_in_schedule_payment_activity);
                 schedulePaymentThirdInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_third_instruction_in_schedule_payment_activity);
                 paymentScheduledSnackBar = Snackbar.make(findViewById(R.id.schedule_payment_coordinator_layout),
                         R.string.text_in_spanish_for_payment_scheduled_snack_bar_in_schedule_payment_activity,
                         PAYMENT_SCHEDULED_SNACK_BAR_DURATION);
+                periodicityTextView.setText(R.string.text_in_spanish_for_periodicity_tag_in_schedule_payment_activity);
+                dayTextView.setText(R.string.text_in_spanish_for_day_tag_in_schedule_payment_activity);
                 break;
             default:
                 scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
                 beautifulMessageTextView.setText(R.string.text_for_in_english_beautiful_message_in_schedule_payment_activity);
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
-                monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_english, android.R.layout.simple_spinner_item);
+                periodicitySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.periodicity_in_english, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity);
                 schedulePaymentThirdInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity);
                 paymentScheduledSnackBar = Snackbar.make(findViewById(R.id.schedule_payment_coordinator_layout),
                         R.string.text_in_english_for_payment_scheduled_snack_bar_in_schedule_payment_activity,
                         PAYMENT_SCHEDULED_SNACK_BAR_DURATION);
+                periodicityTextView.setText(R.string.text_in_english_for_periodicity_tag_in_schedule_payment_activity);
+                dayTextView.setText(R.string.text_in_english_for_day_tag_in_schedule_payment_activity);
         }
 
-        monthSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        monthSpinner.setAdapter(monthSpinnerAdapter);
+        periodicitySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        periodicitySpinner.setAdapter(periodicitySpinnerAdapter);
 
         // Setting the listener on snackBar so the CompleteMenu.java can start after the snackBar
         // is dismissed.

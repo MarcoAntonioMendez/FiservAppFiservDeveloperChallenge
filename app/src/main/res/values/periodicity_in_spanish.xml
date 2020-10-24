@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="periodicity_in_spanish">
+        <item>Cada Mes</item>
+        <item>Cada Dos Meses</item>
+        <item>Cada Tres Meses</item>
+        <item>Cada Cuatro Meses</item>
+        <item>Cada Cinco Meses</item>
+        <item>Cada Seis Meses</item>
+        <item>Cada Siete Meses</item>
+        <item>Cada Ocho Meses</item>
+        <item>Cada Nueve Meses</item>
+        <item>Cada Diez Meses</item>
+        <item>Cada Once Meses</item>
+        <item>Cada Año</item>
+    </string-array>
+</resources>
