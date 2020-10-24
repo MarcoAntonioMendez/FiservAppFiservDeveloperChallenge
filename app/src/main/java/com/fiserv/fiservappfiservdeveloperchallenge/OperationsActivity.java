@@ -28,7 +28,8 @@ public class OperationsActivity extends AppCompatActivity {
     public static final String USER_NAME = "USER_NAME";
 
     private String userName,language,userEmail;
-    private TextView greetUserTextView,transferTextView,accountsTextView;
+    private TextView greetUserTextView,transferTextView,accountsTextView,logOutTextView;
+    private TextView plusSignTextView;
     private LinearLayout accountsLinearLayout;
 
     @Override
@@ -46,6 +47,8 @@ public class OperationsActivity extends AppCompatActivity {
         transferTextView = findViewById(R.id.operations_transfer_text_view);
         accountsTextView = findViewById(R.id.operations_account_text_view);
         accountsLinearLayout = findViewById(R.id.linear_layout_for_accounts);
+        logOutTextView = findViewById(R.id.log_out_text_view_in_operations_activity);
+        plusSignTextView = findViewById(R.id.plus_sign_text_view_in_operations_activity);
 
         // Getting the userName
         userName = getIntent().getExtras().getString(USER_NAME);
@@ -55,6 +58,16 @@ public class OperationsActivity extends AppCompatActivity {
 
         // Getting the user's accounts cards
         getUsersAccountsCards();
+    }
+
+    /**
+     * When user touches the log out icon (the little door), the LogInActivity will show up.
+     * @param view - The log_out_icon_in_operations_activity
+     */
+    public void goBackToLogInActivityFromOperationsActivity(View view){
+        Intent intent = new Intent(this,LogInActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     /**
@@ -315,16 +328,22 @@ public class OperationsActivity extends AppCompatActivity {
                 greetUserTextView.setText("Hello, " + userName);
                 transferTextView.setText("Transfer");
                 accountsTextView.setText("Your Accounts");
+                logOutTextView.setText("Exit");
+                plusSignTextView.setText("More");
             break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 greetUserTextView.setText("Hola, " + userName);
                 transferTextView.setText("Transferir");
                 accountsTextView.setText("Tus Cuentas");
+                logOutTextView.setText("Salir");
+                plusSignTextView.setText("Más");
             break;
             default:
                 greetUserTextView.setText("Hello, " + userName);
                 transferTextView.setText("Transfer");
                 accountsTextView.setText("Your Accounts");
+                logOutTextView.setText("Exit");
+                plusSignTextView.setText("More");
         }
     }
 

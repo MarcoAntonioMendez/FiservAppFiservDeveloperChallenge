@@ -68,5 +68,37 @@
         app:srcCompat="@drawable/plus_sign"
         android:onClick="startCompleteMenuActivity"/>
 
+    <ImageView
+        android:id="@+id/log_out_icon_in_operations_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        app:srcCompat="@drawable/log_out_icon"
+        android:onClick="goBackToLogInActivityFromOperationsActivity"/>
+
+    <TextView
+        android:id="@+id/log_out_text_view_in_operations_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="65dp"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/plus_sign_text_view_in_operations_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Más"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="14dp"/>
+
 
 </android.support.design.widget.CoordinatorLayout>
