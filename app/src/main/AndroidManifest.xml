@@ -38,6 +38,10 @@
         <activity
             android:name=".ForgotMyPasswordActivity"
             android:label="@string/title_activity_forgot_my_password"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SchedulePaymentActivity"
+            android:label="@string/title_activity_schedule_payment"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

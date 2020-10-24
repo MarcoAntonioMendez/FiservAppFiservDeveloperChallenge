@@ -1,5 +1,6 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -52,6 +53,17 @@ public class CompleteMenu extends AppCompatActivity {
 
         // Setting the text for graphic elements, according to language.
         setTextForGraphicElements();
+    }
+
+    /**
+     * When user touches the schedulePaymentIcon (the little calendar), the SchedulePaymentActivity
+     * shall start.
+     * @param view - the schedulePaymentIcon
+     */
+    public void startSchedulePaymentActivity(View view){
+        Intent intent =new Intent(this,SchedulePaymentActivity.class);
+        intent.putExtra(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT,userEmail);
+        startActivity(intent);
     }
 
     /**

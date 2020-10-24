@@ -46,7 +46,8 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/schedule_payment_icon_in_complete_menu"/>
+                        android:src="@drawable/schedule_payment_icon_in_complete_menu"
+                        android:onClick="startSchedulePaymentActivity"/>
                     <TextView
                         android:id="@+id/schedule_payment_in_complete_menu"
                         android:layout_width="wrap_content"
