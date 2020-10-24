@@ -443,7 +443,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
 
         switch(language){
             case AppGlobalConstants.ENGLISH_LANGUAGE:
-                scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
+                scheduleYourPaymentTitleTextView.setText(R.string.text_in_english_for_schedule_your_payment_title_in_schedule_payment_activity);
                 beautifulMessageTextView.setText(R.string.text_for_in_english_beautiful_message_in_schedule_payment_activity);
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
                 periodicitySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.periodicity_in_english, android.R.layout.simple_spinner_item);
@@ -456,7 +456,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 dayTextView.setText(R.string.text_in_english_for_day_tag_in_schedule_payment_activity);
                 break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
-                scheduleYourPaymentTitleTextView.setText("Agenda tu Pago");
+                scheduleYourPaymentTitleTextView.setText(R.string.text_in_spanish_for_schedule_your_payment_title_in_schedule_payment_activity);
                 beautifulMessageTextView.setText(R.string.text_for_in_spanish_beautiful_message_in_schedule_payment_activity);
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_first_instruction_in_schedule_payment_activity);
                 periodicitySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.periodicity_in_spanish, android.R.layout.simple_spinner_item);
@@ -469,7 +469,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 dayTextView.setText(R.string.text_in_spanish_for_day_tag_in_schedule_payment_activity);
                 break;
             default:
-                scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
+                scheduleYourPaymentTitleTextView.setText(R.string.text_in_english_for_schedule_your_payment_title_in_schedule_payment_activity);
                 beautifulMessageTextView.setText(R.string.text_for_in_english_beautiful_message_in_schedule_payment_activity);
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
                 periodicitySpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.periodicity_in_english, android.R.layout.simple_spinner_item);
