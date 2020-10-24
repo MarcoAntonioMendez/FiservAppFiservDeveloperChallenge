@@ -1,5 +1,7 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -29,6 +31,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
     public static final String TRANSPARENT_TEXT_VIEW_BACKGROUND_COLOR = "#FF6600";
     public static final String SELECTED_ACCOUNT_COLOR = "#FFFFFF";
     public static final String ACCOUNT_NOT_SELECTED_COLOR = "#DE5900";
+    public static final int PAYMENT_SCHEDULED_SNACK_BAR_DURATION = 3000;
 
     private String userEmail;
     private TextView scheduleYourPaymentTitleTextView,beautifulMessageTextView;
@@ -36,6 +39,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
     private TextView schedulePaymentThirdInstructionTextView;
     private Spinner monthSpinner,daySpinner;
     private LinearLayout accountsLinearLayout,customersLinearLayout;
+    private Snackbar paymentScheduledSnackBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,14 @@ public class SchedulePaymentActivity extends AppCompatActivity {
 
         // Gets user's customers information
         getUsersCustomersInformation();
+    }
+
+    /**
+     * When user touches the button to schedule the payment, a snack bar will appear at the bottom
+     * saying the payment was scheduled correctly.
+     */
+    public void scheduledPayment(View view){
+        paymentScheduledSnackBar.show();
     }
 
     /**
@@ -435,6 +447,9 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_english, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity);
                 schedulePaymentThirdInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity);
+                paymentScheduledSnackBar = Snackbar.make(findViewById(R.id.schedule_payment_coordinator_layout),
+                        R.string.text_in_english_for_payment_scheduled_snack_bar_in_schedule_payment_activity,
+                        PAYMENT_SCHEDULED_SNACK_BAR_DURATION);
                 break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 scheduleYourPaymentTitleTextView.setText("Agenda tu Pago");
@@ -443,6 +458,9 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_spanish, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_second_instruction_in_schedule_payment_activity);
                 schedulePaymentThirdInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_third_instruction_in_schedule_payment_activity);
+                paymentScheduledSnackBar = Snackbar.make(findViewById(R.id.schedule_payment_coordinator_layout),
+                        R.string.text_in_spanish_for_payment_scheduled_snack_bar_in_schedule_payment_activity,
+                        PAYMENT_SCHEDULED_SNACK_BAR_DURATION);
                 break;
             default:
                 scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
@@ -451,10 +469,27 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_english, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity);
                 schedulePaymentThirdInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity);
+                paymentScheduledSnackBar = Snackbar.make(findViewById(R.id.schedule_payment_coordinator_layout),
+                        R.string.text_in_english_for_payment_scheduled_snack_bar_in_schedule_payment_activity,
+                        PAYMENT_SCHEDULED_SNACK_BAR_DURATION);
         }
 
         monthSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         monthSpinner.setAdapter(monthSpinnerAdapter);
+
+        // Setting the listener on snackBar so the CompleteMenu.java can start after the snackBar
+        // is dismissed.
+        final Context context = this;
+        paymentScheduledSnackBar.addCallback(new Snackbar.Callback() {
+            @Override
+            public void onDismissed(Snackbar snackbar, int event){
+                Intent intent = new Intent(context,CompleteMenu.class);
+                intent.putExtra(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT,userEmail);
+                finish();
+            }
+            @Override
+            public void onShown(Snackbar snackbar) { }
+        });
     }
 
 }

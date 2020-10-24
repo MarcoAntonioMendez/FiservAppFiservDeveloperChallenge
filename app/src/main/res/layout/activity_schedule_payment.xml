@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SchedulePaymentActivity"
-    android:background="#ff6600">
+    android:background="#ff6600"
+    android:id="@+id/schedule_payment_coordinator_layout">
 
     <TextView
         android:id="@+id/schedule_your_payment_title_in_schedule_payment_activity"
@@ -121,6 +122,15 @@
             android:orientation="vertical"/>
     </ScrollView>
 
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="660dp"
+        android:background="#FF7700"
+        android:fontFamily="sans-serif"
+        android:text="Agendar el Pago"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:onClick="scheduledPayment"/>
 
 </android.support.design.widget.CoordinatorLayout>

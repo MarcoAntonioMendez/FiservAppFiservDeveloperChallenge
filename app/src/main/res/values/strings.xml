@@ -17,6 +17,8 @@
     <string name="text_in_spanish_for_schedule_payment_second_instruction_in_schedule_payment_activity">Segundo: Elige la cuenta de donde quieres que el pago se extraiga.</string>
     <string name="text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity">Third: Choose the customer to whom you wish to deposit.</string>
     <string name="text_in_spanish_for_schedule_payment_third_instruction_in_schedule_payment_activity">Tercero: Elige al cliente al cuál le quieres depositar.</string>
+    <string name="text_in_english_for_payment_scheduled_snack_bar_in_schedule_payment_activity">Payment Scheduled Successfully</string>
+    <string name="text_in_spanish_for_payment_scheduled_snack_bar_in_schedule_payment_activity">Pago Agendado Exitósamente</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>
