@@ -7,4 +7,10 @@
     <string name="title_activity_register_new_fiserv_app_user">RegisterNewFiservAppUser</string>
     <string name="title_activity_forgot_my_password">ForgotMyPasswordActivity</string>
     <string name="title_activity_schedule_payment">SchedulePaymentActivity</string>
+
+    <!-- Strings in SchedulePaymentActivity Section-->
+    <string name="text_for_in_english_beautiful_message_in_schedule_payment_activity">Let Fiserv handle your recurring payments so you don\'t have to worry about them.</string>
+    <string name="text_for_in_spanish_beautiful_message_in_schedule_payment_activity">Deja que Fiserv se encarge de tus pagos recurrentes para que no te tengas que preocupar por ellos.</string>
+    <!-- Strings in SchedulePaymentActivity Section-END-->
+
 </resources>

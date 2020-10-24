@@ -7,4 +7,25 @@
     tools:context=".SchedulePaymentActivity"
     android:background="#ff6600">
 
+    <TextView
+        android:id="@+id/schedule_your_payment_title_in_schedule_payment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Agenda tu Pago"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="28dp"/>
+
+    <TextView
+        android:id="@+id/beautiful_message_in_schedule_payment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Deja que Fiserv se encargue de tus pagos recurrentes para que no te preocupes y emplees tu tiempo en lo más importante."
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+
 </android.support.design.widget.CoordinatorLayout>
