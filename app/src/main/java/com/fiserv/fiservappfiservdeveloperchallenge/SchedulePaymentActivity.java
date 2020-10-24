@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.BankAccount;
+import com.fiserv.fiservappfiservdeveloperchallenge.banking.Customer;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -32,8 +33,9 @@ public class SchedulePaymentActivity extends AppCompatActivity {
     private String userEmail;
     private TextView scheduleYourPaymentTitleTextView,beautifulMessageTextView;
     private TextView schedulePaymentFirstInstructionTextView,schedulePaymentSecondInstructionTextView;
+    private TextView schedulePaymentThirdInstructionTextView;
     private Spinner monthSpinner,daySpinner;
-    private LinearLayout accountsLinearLayout;
+    private LinearLayout accountsLinearLayout,customersLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +55,114 @@ public class SchedulePaymentActivity extends AppCompatActivity {
         daySpinner = findViewById(R.id.day_spinner_in_schedule_payment_activity);
         schedulePaymentSecondInstructionTextView = findViewById(R.id.schedule_payment_second_instruction_in_schedule_payment_activity);
         accountsLinearLayout = findViewById(R.id.accounts_container_in_schedule_payment_activity);
+        schedulePaymentThirdInstructionTextView = findViewById(R.id.schedule_payment_third_instruction_in_schedule_payment_activity);
+        customersLinearLayout = findViewById(R.id.customers_container_in_schedule_payment_activity);
 
 
         // Setting texts for graphic elements
         setTextForGraphicElements();
 
+        // Gets the banking accounts of the user
         getUsersAccountsCards();
+
+        // Gets user's customers information
+        getUsersCustomersInformation();
+    }
+
+    /**
+     * This method retrieves the user's customers information.
+     * 1. Retrieves the user's customers information.
+     * 2. Creates a panel (LinearLayout) to place customer information with graphic elements.
+     *    Stuff like: customerName, card type, last four digits of the card etc.
+     */
+    private void getUsersCustomersInformation(){
+        // 1. Retrieves the user's customers information.
+        ArrayList<Customer> usersCustomers = retrieveUsersUsersCustomersInformation();
+
+        // 2. Placing user's customer information in scrollable LinearLayout
+        for(int x = 0; x < usersCustomers.size(); x++){
+            final LinearLayout customerPanel = new LinearLayout(this);
+            customerPanel.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            customerPanel.setOrientation(LinearLayout.VERTICAL);
+
+            // Creating the graphic elements
+            TextView accountCompanyNameAndType =
+                    setTextViewForCompanyNameAndType(new BankAccount("","",
+                            "","",
+                            usersCustomers.get(x).getCustomerName(),""));
+            LinearLayout cardIconAndLastFourNumbers =
+                    setCardIconAndLastFourNumbers(new BankAccount("","",
+                            "",usersCustomers.get(x).getBankAccountNumber(),
+                            usersCustomers.get(x).getCompany(),""));
+            TextView transparentBlock = getTransparentBlock();
+
+            // Adding graphic elements to the accountPanel
+            customerPanel.addView(accountCompanyNameAndType);
+            customerPanel.addView(cardIconAndLastFourNumbers);
+            customerPanel.addView(transparentBlock);
+            customerPanel.setSelected(false);
+
+            // Setting functionality for the account to be selected
+            customerPanel.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    if(customerPanel.isSelected()){
+                        customerPanel.setSelected(false);
+                        customerPanel.setBackgroundColor(Color.parseColor(ACCOUNT_NOT_SELECTED_COLOR));
+                    }else{
+                        customerPanel.setBackgroundColor(Color.parseColor(SELECTED_ACCOUNT_COLOR));
+                        customerPanel.setSelected(true);
+                    }
+                }
+            });
+
+            customersLinearLayout.addView(customerPanel);
+        }
+    }
+
+    /**
+     * This method retrieves the user's customer information from a remote database.
+     * WARNING: Since this app was made for the FiservDeveloperChallenge.
+     *          The team "TrekingDevs" didn't want to spend money in a remote database, for now:
+     *          this method uses hardcoded information. But the final form of this method is
+     *          supposed to actually retrieve user's customers information from a remote database.
+     * @return - A list of customers.
+     */
+    private ArrayList<Customer> retrieveUsersUsersCustomersInformation(){
+        ArrayList<Customer> listOfCustomers = new ArrayList<>();
+
+        Customer customer;
+        String customerId,customerBankAccountNumber,customerName,company;
+
+        customerId = "1";
+        customerBankAccountNumber = "1234567891234567";
+        customerName = "Escuela de Piano";
+        company = BankAccount.COMPANY_VISA_CONSTANT;
+        customer = new Customer(customerId,customerBankAccountNumber,customerName,company);
+        listOfCustomers.add(customer);
+
+        customerId = "2";
+        customerBankAccountNumber = "1234567891234567";
+        customerName = "Compañía de Internet";
+        company = BankAccount.COMPANY_MASTERCARD_CONSTANT;
+        customer = new Customer(customerId,customerBankAccountNumber,customerName,company);
+        listOfCustomers.add(customer);
+
+        customerId = "3";
+        customerBankAccountNumber = "1234567891234567";
+        customerName = "Compañía de Luz";
+        company = BankAccount.COMPANY_DISCOVER_CONSTANT;
+        customer = new Customer(customerId,customerBankAccountNumber,customerName,company);
+        listOfCustomers.add(customer);
+
+        customerId = "4";
+        customerBankAccountNumber = "1234567891234567";
+        customerName = "Tamales 'El Jonchito'";
+        company = BankAccount.COMPANY_VISA_CONSTANT;
+        customer = new Customer(customerId,customerBankAccountNumber,customerName,company);
+        listOfCustomers.add(customer);
+
+        return listOfCustomers;
     }
 
     /**
@@ -330,6 +434,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
                 monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_english, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity);
+                schedulePaymentThirdInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity);
                 break;
             case AppGlobalConstants.SPANISH_LANGUAGE:
                 scheduleYourPaymentTitleTextView.setText("Agenda tu Pago");
@@ -337,6 +442,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_first_instruction_in_schedule_payment_activity);
                 monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_spanish, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_second_instruction_in_schedule_payment_activity);
+                schedulePaymentThirdInstructionTextView.setText(R.string.text_in_spanish_for_schedule_payment_third_instruction_in_schedule_payment_activity);
                 break;
             default:
                 scheduleYourPaymentTitleTextView.setText("Schedule your Payment");
@@ -344,6 +450,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
                 schedulePaymentFirstInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_first_instruction_in_schedule_payment_activity);
                 monthSpinnerAdapter = ArrayAdapter.createFromResource(this,R.array.months_in_english, android.R.layout.simple_spinner_item);
                 schedulePaymentSecondInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_second_instruction_in_schedule_payment_activity);
+                schedulePaymentThirdInstructionTextView.setText(R.string.text_in_english_for_schedule_payment_third_instruction_in_schedule_payment_activity);
         }
 
         monthSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
