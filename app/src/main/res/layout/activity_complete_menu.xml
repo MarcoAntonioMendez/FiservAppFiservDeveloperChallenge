@@ -95,7 +95,7 @@
             <!-- Customers section ************************************************************* -->
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="120dp"
                 android:background="#ff6600"/>
             <TextView
                 android:id="@+id/customers_tag_complete_menu"
@@ -175,10 +175,10 @@
                 android:textColor="#FFFFFF"/>
             <!-- Customers section-End ********************************************************* -->
 
-            <!-- Profile *********************************************************** -->
+            <!-- Profile Section *********************************************************** -->
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="120dp"
                 android:background="#ff6600"/>
             <TextView
                 android:id="@+id/profile_tag_complete_menu"
@@ -208,12 +208,12 @@
                 android:fontFamily="sans-serif"
                 android:textSize="25dp"
                 android:textColor="#FFFFFF"/>
-            <!-- Profile-END ******************************************************* -->
+            <!-- Profile Section-END ******************************************************* -->
 
             <!-- Communicate section *********************************************************** -->
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="120dp"
                 android:background="#ff6600"/>
             <TextView
                 android:id="@+id/communicate_tag_complete_menu"
