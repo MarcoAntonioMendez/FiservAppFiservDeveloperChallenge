@@ -37,5 +37,41 @@
         android:fontFamily="sans-serif"
         android:textSize="18dp"/>
 
+    <TextView
+        android:id="@+id/month_tag_in_schedule_payment_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:text="Mes:"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/month_spinner_in_schedule_payment_activity"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:backgroundTint="#ffffff"/>
+
+    <TextView
+        android:id="@+id/day_tag_in_schedule_payment_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="180dp"
+        android:text="Día:"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/day_spinner_in_schedule_payment_activity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="180dp"
+        android:backgroundTint="#ffffff"/>
+
 
 </android.support.design.widget.CoordinatorLayout>
