@@ -61,6 +61,17 @@ public class OperationsActivity extends AppCompatActivity {
     }
 
     /**
+     * When user touches the operations_transfer_money_icon, the TransferMoneyActivity.java will
+     * start.
+     * @param view - the operations_transfer_money_icon
+     */
+    public void startTransferMoneyActivity(View view){
+        Intent intent = new Intent(this,TransferMoneyActivity.class);
+        intent.putExtra(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT,userEmail);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the log out icon (the little door), the LogInActivity will show up.
      * @param view - The log_out_icon_in_operations_activity
      */

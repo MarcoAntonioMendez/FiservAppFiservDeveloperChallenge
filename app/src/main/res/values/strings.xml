@@ -26,6 +26,7 @@
     <string name="text_in_english_for_day_tag_in_schedule_payment_activity">Day</string>
     <string name="text_in_spanish_for_day_tag_in_schedule_payment_activity">Día</string>
     <string name="title_activity_generate_payment_url">GeneratePaymentURLActivity</string>
+    <string name="title_activity_transfer_money">TransferMoneyActivity</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>
