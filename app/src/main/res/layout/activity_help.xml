@@ -7,4 +7,85 @@
     tools:context=".HelpActivity"
     android:background="#ff6600">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Estamos Listos Para Ayudarte"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/phone_operator_icon"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:text="Puedes llamarnos a estos números de teléfono (sólo toca alguno de ellos)."
+        android:textSize="17dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:text="Desde la Ciudad de México:"
+        android:textSize="17dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="220dp"
+        android:text="11-02-06-60"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:text="Desde el interior de la república: "
+        android:textSize="17dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="300dp"
+        android:text="01-800-215-5733"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="O envíanos un correo electrónico (toca el ícono):"
+        android:textSize="17dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:src="@drawable/email_icon"/>
+
+
 </android.support.design.widget.CoordinatorLayout>
