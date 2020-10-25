@@ -192,6 +192,11 @@ public class GeneratePaymentURLActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method sends an http request to FiservServer so an URL payment ca be generated.
+     * @param total - Total amount of money for the transaction.
+     * @param orderNumber - order Id
+     */
     private void generatePaymentURL(String total,String orderNumber){
         RestClient client = new RestClient(getApplicationContext());
 
