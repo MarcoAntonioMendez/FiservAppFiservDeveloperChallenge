@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ThemedSpinnerAdapter;
 
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.RestClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -40,6 +42,7 @@ public class GeneratePaymentURLActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
     public static final String STATUS_BAR_COLOR = "#363636";
 
+    private EditText orderNumberEditText,subtotalEditText,otherChargesEditText,totalPriceEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,52 @@ public class GeneratePaymentURLActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setNavigationBarColor(Color.parseColor(NAVIGATION_BAR_COLOR));
         getWindow().setStatusBarColor(Color.parseColor(STATUS_BAR_COLOR));
+
+        // Getting references from XML file
+        orderNumberEditText = findViewById(R.id.order_number_edit_text_in_generate_payment_url_activity);
+        subtotalEditText = findViewById(R.id.subtotal_edit_text_in_generate_payment_url_activity);
+        otherChargesEditText = findViewById(R.id.other_charges_edit_text_in_generate_payment_url_activity);
+        totalPriceEditText = findViewById(R.id.total_price_edit_text_in_generate_payment_url_activity);
+
+        calculateTotalPrice();
+    }
+
+    private void calculateTotalPrice(){
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    try {
+                        Thread.sleep(30);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    keepCalculating();
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+
+    private void keepCalculating(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String subtotal = "0",otherCharges = "0";
+                if(!subtotalEditText.getText().toString().isEmpty()){
+                    subtotal = subtotalEditText.getText().toString();
+                }
+
+                if(!otherChargesEditText.getText().toString().isEmpty()){
+                    otherCharges = otherChargesEditText.getText().toString();
+                }
+
+                double total = Double.parseDouble(subtotal) + Double.parseDouble(otherCharges);
+
+                totalPriceEditText.setText(Double.toString(total));
+            }
+        });
     }
 
     private void generatePaymentURL(String total,String orderNumber){
