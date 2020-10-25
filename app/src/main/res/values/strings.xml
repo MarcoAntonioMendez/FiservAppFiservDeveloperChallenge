@@ -29,6 +29,7 @@
     <string name="title_activity_transfer_money">TransferMoneyActivity</string>
     <string name="title_activity_why_us">WhyUsActivity</string>
     <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_register_new_bank_account">RegisterNewBankAccountActivity</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>

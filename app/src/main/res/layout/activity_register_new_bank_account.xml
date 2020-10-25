@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterNewBankAccountActivity"
+    android:background="#ff6600">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Registra una Nueva Cuenta"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/card_number_edit_text_in_register_new_bank_account_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Ingrese el número de su tarjeta"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:inputType="number"
+        android:text="Ingrese la fecha de expiración:"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Mes:"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/month_spinner_in_register_new_bank_account_activity"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:backgroundTint="#ffffff"/>
+
+    <TextView
+        android:id="@+id/year_tag_in_register_new_bank_account_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="180dp"
+        android:text="Año:"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/year_spinner_in_register_new_bank_account_activity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="180dp"
+        android:backgroundTint="#ffffff"/>
+
+    <EditText
+        android:id="@+id/cvv_code_edit_text_in_register_new_bank_account_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:inputType="number"
+        android:text="Ingrese el código de seguridad (CVV):"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:text="Registrar Tarjeta"
+        android:textColor="#FFFFFF"
+        android:background="#FF7700"
+        android:textSize="25dp"
+        android:fontFamily="sans-serif"
+        android:onClick="registerNewBankAccount"/>
+
+</android.support.design.widget.CoordinatorLayout>

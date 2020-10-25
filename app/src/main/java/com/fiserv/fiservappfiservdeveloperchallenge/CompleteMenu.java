@@ -56,6 +56,15 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches the icon to register a new bank account the RegisterNewBankAccountActivty.java
+     * @param view - icon to register a new bank account.
+     */
+    public void startRegisterNewBankAccountActivity(View view){
+        Intent intent = new Intent(this,RegisterNewBankAccountActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the icon of the help_icon the help Activity will start.
      * @param view - help_icon
      */
