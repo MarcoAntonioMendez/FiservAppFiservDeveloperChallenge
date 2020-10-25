@@ -28,6 +28,7 @@
     <string name="title_activity_generate_payment_url">GeneratePaymentURLActivity</string>
     <string name="title_activity_transfer_money">TransferMoneyActivity</string>
     <string name="title_activity_why_us">WhyUsActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>

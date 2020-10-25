@@ -46,7 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/computer_monitor"/>
+                android:src="@drawable/computer_monitor"
+                android:onClick="openFiservWebPageInBrowser"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,7 +78,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/lock_icon"/>
+                android:src="@drawable/lock_icon"
+                android:onClick="openFiservWebPageInBrowser"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +110,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/phone_operator_icon"/>
+                android:src="@drawable/phone_operator_icon"
+                android:onClick="startHelpActivityFromWhyUsActivity"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,7 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/every_one_uses_this_service_icon"/>
+                android:src="@drawable/every_one_uses_this_service_icon"
+                android:onClick="openFiservWebPageInBrowser"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,7 +175,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/satisfied_customer"/>
+                android:src="@drawable/satisfied_customer"
+                android:onClick="openFiservWebPageInBrowser"/>
 
         </LinearLayout>
     </ScrollView>

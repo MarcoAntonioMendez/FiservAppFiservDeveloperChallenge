@@ -56,6 +56,15 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches the icon of the help_icon the help Activity will start.
+     * @param view - help_icon
+     */
+    public void startHelpActivityFromCompleteMenuActivity(View view){
+        Intent intent = new Intent(this,HelpActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the why_fiserv_icon (the question mark), the WhyUsActivity.java will show.
      * @param view - The why_fiserv_icon
      */
