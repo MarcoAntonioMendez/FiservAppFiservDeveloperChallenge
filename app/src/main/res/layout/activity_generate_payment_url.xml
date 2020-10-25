@@ -135,5 +135,35 @@
         android:textSize="20dp"
         android:fontFamily="sans-serif"
         android:textColor="#FFFFFF"
-        android:background="#FF7700"/>
+        android:background="#FF7700"
+        android:onClick="onGeneratePaymentURLButtonPressed"/>
+
+    <TextView
+        android:id="@+id/choose_how_to_share_text_view_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:text="Puedes compartir el URL a través de: "
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"/>
+
+    <ImageView
+        android:id="@+id/email_icon_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/email_icon"
+        android:layout_marginTop="420dp"
+        android:layout_marginLeft="200dp"
+        android:onClick="shareURLThroughGmail"/>
+
+    <ImageView
+        android:id="@+id/whatsapp_icon_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        app:srcCompat="@drawable/whatsapp_icon"
+        android:onClick="shareURLThroughWhatsapp"/>
+
+
 </android.support.design.widget.CoordinatorLayout>
