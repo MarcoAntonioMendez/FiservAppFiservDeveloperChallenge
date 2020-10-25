@@ -25,6 +25,7 @@
     <string name="text_in_spanish_for_periodicity_tag_in_schedule_payment_activity">Periodicidad</string>
     <string name="text_in_english_for_day_tag_in_schedule_payment_activity">Day</string>
     <string name="text_in_spanish_for_day_tag_in_schedule_payment_activity">Día</string>
+    <string name="title_activity_generate_payment_url">GeneratePaymentURLActivity</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>

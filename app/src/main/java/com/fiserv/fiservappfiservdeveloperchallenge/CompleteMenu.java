@@ -56,6 +56,15 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches the generatePaymentURL icon, the GeneratePaymentURLActivity will start.
+     * @param view - The generatePaymentURL icon
+     */
+    public void startGeneratePaymentURLActivity(View view){
+        Intent intent = new Intent(this,GeneratePaymentURLActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the schedulePaymentIcon (the little calendar), the SchedulePaymentActivity
      * shall start.
      * @param view - the schedulePaymentIcon

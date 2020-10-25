@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fiserv.fiservappfiservdeveloperchallenge">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -42,6 +44,10 @@
         <activity
             android:name=".SchedulePaymentActivity"
             android:label="@string/title_activity_schedule_payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GeneratePaymentURLActivity"
+            android:label="@string/title_activity_generate_payment_url"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
