@@ -7,4 +7,133 @@
     tools:context=".GeneratePaymentURLActivity"
     android:background="#ff6600">
 
+    <TextView
+        android:id="@+id/generate_payment_url_title_in_generate_payment_url_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generar URL de Pago"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/order_number_text_view_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Número de Pedido: "
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/order_number_edit_text_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="160dp"
+        android:ems="9"
+        android:inputType="number"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        android:backgroundTint="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/subtotal_text_view_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="80dp"
+        android:text="Subtotal: "
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/subtotal_edit_text_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="160dp"
+        android:ems="9"
+        android:inputType="numberDecimal"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        android:backgroundTint="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/other_charges_text_view_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="30dp"
+        android:text="Otros Cargos: "
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/other_charges_edit_text_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="160dp"
+        android:ems="9"
+        android:inputType="numberDecimal"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        android:backgroundTint="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/total_price_text_view_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Total: "
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"/>
+
+    <EditText
+        android:id="@+id/total_price_edit_text_in_generate_payment_url_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="160dp"
+        android:ems="9"
+        android:inputType="number"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"
+        android:backgroundTint="#FFFFFF"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:text="Generar URL de Pago"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:background="#FF7700"/>
 </android.support.design.widget.CoordinatorLayout>

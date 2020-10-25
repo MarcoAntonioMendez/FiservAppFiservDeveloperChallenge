@@ -50,7 +50,7 @@ public class GeneratePaymentURLActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.parseColor(STATUS_BAR_COLOR));
     }
 
-    private void generatePaymentURL(String total){
+    private void generatePaymentURL(String total,String orderNumber){
         RestClient client = new RestClient(getApplicationContext());
 
         try {
@@ -67,7 +67,7 @@ public class GeneratePaymentURLActivity extends AppCompatActivity {
             saleTransaction.put("authenticateTransaction","true");
             saleTransaction.put("dynamicMerchantName","MyWebsite");
             saleTransaction.put("invoiceNumber","96126098");
-            saleTransaction.put("purchaseOrderNumber","123055342");
+            saleTransaction.put("purchaseOrderNumber",orderNumber);
             saleTransaction.put("ip","264.31.73.24");
             //send POST HTTP REQUEST
             client.post("payment-url", saleTransaction, new JsonHttpResponseHandler(){
