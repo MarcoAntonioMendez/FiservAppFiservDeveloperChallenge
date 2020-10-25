@@ -56,6 +56,15 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches the why_fiserv_icon (the question mark), the WhyUsActivity.java will show.
+     * @param view - The why_fiserv_icon
+     */
+    public void startWhyUsActivity(View view){
+        Intent intent = new Intent(this,WhyUsActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the generatePaymentURL icon, the GeneratePaymentURLActivity will start.
      * @param view - The generatePaymentURL icon
      */

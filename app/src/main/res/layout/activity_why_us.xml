@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WhyUsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff6600">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Por Qué Usar Los Servicios de Fiserv?"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textSize="20dp"/>
+
+            <!-- 1st Reason -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Fiserv Simplifica tus operaciones financieras."
+                android:textColor="#000000"
+                android:fontFamily="sans-serif"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="5dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/computer_monitor"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="La app the Fiserv es útil tanto para individuos como para negocios (chicos y grandes). Permite automatizar, digitalizar y modernizar varias operaciones bancarias; haciendo que tu negocio crezca y ofrezca una experiencia premium a tus clientes. Si eres un individuo, podrás relizar tus pagos con facilidad y seguridad, así como también automatizarlos, haciendo tu vida financiera más conveniente."
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textSize="15dp"/>
+
+            <!-- 2nd Reason -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. La seguridad ante todo."
+                android:textColor="#000000"
+                android:fontFamily="sans-serif"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="5dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/lock_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fiserv se encarga de utilizar las últimas y mejores técnicas en el campo de la tecnología financiera; con la utilización de protocolos PCI y la tokenización de los datos, el equipo de Fiserv se asegura encarecidamente de proporcionar una experiencia de vanguardia en ciberseguridad; dándole la seguridad al usuario de que su información está completemente protegida."
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textSize="15dp"/>
+
+            <!-- 3rd Reason-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Servicio de soporte 24/7."
+                android:textColor="#000000"
+                android:fontFamily="sans-serif"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="5dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/phone_operator_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Si tienes alguna duda de cómo utilizar nuestros servicios, puedes contactarnos a través de nuestros números telefónicos o nuestro correo electrónico; alguno de nuestos colaboradores se pondrá en contacto contigo a la brevedad para solucionar tus dudas (para acceder a esa información toca el ícono de 'ayuda' en el menú anterior o toca el ícono de la operadora aquí mismo)."
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textSize="15dp"/>
+
+            <!-- 4th Reason -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Mejorando las finanzas desde 2001."
+                android:textColor="#000000"
+                android:fontFamily="sans-serif"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="5dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/every_one_uses_this_service_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nuestros servicios y nuestra tecnología han mejorado las finanzas de negocios y personas desde el año 2001, y estamos a punto de mejorar muchos más con nuestra inclusión en el campo digital."
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textSize="15dp"/>
+
+            <!-- Last Reason -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="40dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¡En Resumen, puedes confiar en Fiserv para mejorar tus Finanzas!"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif"
+                android:textSize="23dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="20dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/satisfied_customer"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
