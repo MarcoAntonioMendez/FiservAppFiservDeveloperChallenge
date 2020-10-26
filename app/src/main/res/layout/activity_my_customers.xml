@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyCustomersActivity"
+    android:background="#ff6600">
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mis Clientes"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Escuela de Piano"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Tarjeta: *1234"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/visa_card_icon"/>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:text="Compañia de Luz"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="Tarjeta: *1234"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:src="@drawable/discover_card_icon"/>
+
+
+</android.support.design.widget.CoordinatorLayout>
