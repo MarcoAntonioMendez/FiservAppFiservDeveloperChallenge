@@ -1,5 +1,7 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.RestClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -30,9 +33,19 @@ import cz.msebera.android.httpclient.client.HttpResponseException;
 public class RegisterNewBankAccountActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
     public static final String STATUS_BAR_COLOR = "#363636";
+    public static final String CLIENT_REQUEST_ID_CONSTANT = "clientRequestId";
+    public static final String API_TRACE_ID_CONSTANT = "apiTraceId";
+    public static final String ORDER_ID_CONSTANT = "orderId";
+    public static final String PAYMENT_TOKEN_CONSTANT_FOR_ARRAY = "paymentToken";
+    public static final String PAYMENT_TOKEN_LAST_4_DIGITS_CONSTANTS = "last4";
+    public static final String PAYMENT_TOKEN_BRAND_CONSTANT = "brand";
 
     private Spinner monthSpinner,yearSpinner;
     private EditText cardNumberEditText,cvvCodeEditText;
+    private boolean tokenHasBeenCreatedCorrectly;
+    private String clientRequestId,apiTraceId,orderId,paymentTokenLast4Digits,paymentTokenBrand;
+    private Context context;
+    private TextView generatingTokenTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +54,63 @@ public class RegisterNewBankAccountActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setNavigationBarColor(Color.parseColor(NAVIGATION_BAR_COLOR));
         getWindow().setStatusBarColor(Color.parseColor(STATUS_BAR_COLOR));
+        tokenHasBeenCreatedCorrectly = false;
+        context = this;
 
         // Getting references for graphic elements from XML file
         monthSpinner = findViewById(R.id.month_spinner_in_register_new_bank_account_activity);
         yearSpinner = findViewById(R.id.year_spinner_in_register_new_bank_account_activity);
         cardNumberEditText = findViewById(R.id.card_number_edit_text_in_register_new_bank_account_activity);
         cvvCodeEditText = findViewById(R.id.cvv_code_edit_text_in_register_new_bank_account_activity);
+        generatingTokenTextView = findViewById(R.id.generating_card_token_in_register_new_bank_account);
+
+        generatingTokenTextView.setVisibility(View.INVISIBLE);
 
         setSpinnersAndEditText();
+        startCheckingLoop();
+    }
+
+    /**
+     * This endless loop will be useful to start a new activity once the token has been created.
+     */
+    private void startCheckingLoop(){
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    try{Thread.sleep(30);}catch(InterruptedException e){e.printStackTrace();}
+                    checkIfTokenWasCreatedCorrectly();
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+
+    /**
+     * Checks if the token was created correctly, if it was created correctly, the
+     * TokenVerificationActivity will start.
+     */
+    private void checkIfTokenWasCreatedCorrectly(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(tokenHasBeenCreatedCorrectly){
+                    tokenHasBeenCreatedCorrectly = false;
+                    // Starting the TokenVerificationActivity
+                    Intent intent = new Intent(context,TokenVerificationActivity.class);
+                    intent.putExtra(AppGlobalConstants.CLIENT_REQUEST_ID_CONSTANT,clientRequestId);
+                    intent.putExtra(AppGlobalConstants.API_TRACE_ID_CONSTANT,apiTraceId);
+                    intent.putExtra(AppGlobalConstants.ORDER_ID_CONSTANT,orderId);
+                    intent.putExtra(AppGlobalConstants.PAYMENT_TOKEN_INDEX_FOR_LAST_4_DATA_CONSTANT,
+                                                                           paymentTokenLast4Digits);
+                    intent.putExtra(AppGlobalConstants.PAYMENT_TOKEN_INDEX_FOR_BRAND_DATA_CONSTANT,
+                                                                                 paymentTokenBrand);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
     }
 
     /**
@@ -58,6 +120,7 @@ public class RegisterNewBankAccountActivity extends AppCompatActivity {
      */
     public void registerNewBankAccount(View view){
         generatePaymentCardToken();
+        generatingTokenTextView.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -110,7 +173,7 @@ public class RegisterNewBankAccountActivity extends AppCompatActivity {
      * The information hardcoded belongs to credentials given by Fiserv for the FiservDeveloperChallenge
      */
     private void generatePaymentCardToken(){
-        RestClient client = new RestClient(getApplicationContext());
+        final RestClient client = new RestClient(getApplicationContext());
 
         try {
             //Build JSON
@@ -136,6 +199,20 @@ public class RegisterNewBankAccountActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                     super.onSuccess(statusCode, headers, response);
+                    tokenHasBeenCreatedCorrectly = true;
+                    try {
+                        clientRequestId = response.getString(CLIENT_REQUEST_ID_CONSTANT);
+                        apiTraceId = response.getString(API_TRACE_ID_CONSTANT);
+                        orderId = response.getString(ORDER_ID_CONSTANT);
+                        paymentTokenLast4Digits =
+                                response.getJSONObject(PAYMENT_TOKEN_CONSTANT_FOR_ARRAY).getString(
+                                PAYMENT_TOKEN_LAST_4_DIGITS_CONSTANTS);
+                        paymentTokenBrand =
+                                response.getJSONObject(PAYMENT_TOKEN_CONSTANT_FOR_ARRAY).getString(
+                                PAYMENT_TOKEN_BRAND_CONSTANT);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     Log.d("SuccessObj", response.toString());
                 }
 

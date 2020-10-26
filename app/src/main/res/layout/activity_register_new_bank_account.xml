@@ -101,4 +101,14 @@
         android:fontFamily="sans-serif"
         android:onClick="registerNewBankAccount"/>
 
+    <TextView
+        android:id="@+id/generating_card_token_in_register_new_bank_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:text="Registrando la tarjeta... Por favor espere..."
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="20dp"/>
+
 </android.support.design.widget.CoordinatorLayout>

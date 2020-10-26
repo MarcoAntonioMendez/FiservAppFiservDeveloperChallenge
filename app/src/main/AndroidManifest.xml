@@ -65,6 +65,10 @@
         <activity
             android:name=".RegisterNewBankAccountActivity"
             android:label="@string/title_activity_register_new_bank_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TokenVerificationActivity"
+            android:label="@string/title_activity_token_verification"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
