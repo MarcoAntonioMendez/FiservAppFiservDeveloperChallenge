@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyScheduledPaymentsActivity"
+    android:background="#ff6600">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mis Pagos Agendados"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pago a Escuela de Piano"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frecuencia: Cada Mes.      Día: 1"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: 950.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta de Origen: *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="30dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pago a Compañía de Internet"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frecuencia: Cada Mes.      Día: 1"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: 450.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta de Origen: *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="30dp"
+                android:fontFamily="sans-serif"/>
+            <!-- Third Item -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pago a Colegio de los Niños"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frecuencia: Cada Mes.      Día: 1"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: 5000.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta de Origen: *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="30dp"
+                android:fontFamily="sans-serif"/>
+
+            <!-- Fourth Item-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pago a Mensualidad de la Casa"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frecuencia: Cada Mes.      Día: 1"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: 9,000.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta de Origen: *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="30dp"
+                android:fontFamily="sans-serif"/>
+            <!-- Fifth Item -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pago a Estela de los Tamales"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frecuencia: Cada Año.      Día: 28"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: 15,000.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta de Origen: *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="30dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

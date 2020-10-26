@@ -56,6 +56,15 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches the mySchedulePayments icon, the MyScheduledPaymentsActivity.java will start
+     * @param view the mySchedulePayments icon
+     */
+    public void startMyScheduledPaymentsActivity(View view){
+        Intent intent = new Intent(this,MyScheduledPaymentsActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the icon to register a new bank account the RegisterNewBankAccountActivty.java
      * @param view - icon to register a new bank account.
      */

@@ -69,6 +69,10 @@
         <activity
             android:name=".TokenVerificationActivity"
             android:label="@string/title_activity_token_verification"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyScheduledPaymentsActivity"
+            android:label="@string/title_activity_my_scheduled_payments"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
