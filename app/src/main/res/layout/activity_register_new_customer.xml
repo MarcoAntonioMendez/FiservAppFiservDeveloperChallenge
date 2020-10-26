@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/register_new_customer_coordinator_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterNewCustomerActivity"
+    android:background="#ff6600">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/hand_shake"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Registrar a un Nuevo Cliente"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Registra a un nuevo cliente para que puedas simplificar las operaciones financieras que lo/la involucran y así tomar partido de la tecnología Fiserv."
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"/>
+
+    <EditText
+        android:id="@+id/editText15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="Ingrese el nombre del cliente"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/editText16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Ingrese el número de la tarjeta del cliente"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:background="#FF7700"
+        android:text="Registrar cliente"
+        android:fontFamily="sans-serif"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:onClick="registerNewCustomer"/>
+</android.support.design.widget.CoordinatorLayout>

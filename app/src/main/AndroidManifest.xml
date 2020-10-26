@@ -77,6 +77,10 @@
         <activity
             android:name=".MyPaymentsHistoryActivity"
             android:label="@string/title_activity_my_payments_history"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RegisterNewCustomerActivity"
+            android:label="@string/title_activity_register_new_customer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

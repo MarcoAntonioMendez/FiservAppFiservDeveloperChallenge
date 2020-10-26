@@ -33,6 +33,7 @@
     <string name="title_activity_token_verification">TokenVerificationActivity</string>
     <string name="title_activity_my_scheduled_payments">MyScheduledPaymentsActivity</string>
     <string name="title_activity_my_payments_history">MyPaymentsHistoryActivity</string>
+    <string name="title_activity_register_new_customer">RegisterNewCustomerActivity</string>
     <!-- Strings in SchedulePaymentActivity Section-END-->
 
 </resources>

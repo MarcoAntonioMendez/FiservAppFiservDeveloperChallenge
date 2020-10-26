@@ -56,6 +56,16 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches the register new customer icon, the RegisterNewCustomerActivity.java will
+     * start.
+     * @param view - the register new customer icon
+     */
+    public void startRegisterNewCustomerActivity(View view){
+        Intent intent = new Intent(this,RegisterNewCustomerActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches  the myPaymentsHistoryActivity icon, the MyPaymentsHistoryActivity.java
      * will start.
      * @param view - the myPaymentsHistoryActivity icon

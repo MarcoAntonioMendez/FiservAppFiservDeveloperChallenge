@@ -168,7 +168,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/register_new_customer_icon_in_complete_menu"/>
+                android:src="@drawable/register_new_customer_icon_in_complete_menu"
+                android:onClick="startRegisterNewCustomerActivity"/>
             <TextView
                 android:id="@+id/register_new_customer_in_complete_menu"
                 android:layout_width="wrap_content"
