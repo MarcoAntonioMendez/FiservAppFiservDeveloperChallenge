@@ -56,6 +56,16 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
+     * When user touches  the myPaymentsHistoryActivity icon, the MyPaymentsHistoryActivity.java
+     * will start.
+     * @param view - the myPaymentsHistoryActivity icon
+     */
+    public void startMyPaymentsHistoryActivity(View view){
+        Intent intent = new Intent(this,MyPaymentsHistoryActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * When user touches the mySchedulePayments icon, the MyScheduledPaymentsActivity.java will start
      * @param view the mySchedulePayments icon
      */

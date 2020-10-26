@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyPaymentsHistoryActivity"
+    android:background="#ff6600">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mi Historial de Pagos"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo: Transferencia"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: - 500.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta : *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/visa_card_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha y hora: 27/10/2020, 6:23 pm."
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#FFFFFF"
+                android:textSize="50dp"
+                android:fontFamily="sans-serif"/>
+
+            <!-- 2ND Element -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo: Depósito"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: + 700.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta : *8434"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mastercard_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha y hora: 27/10/2020, 7:23 pm."
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#FFFFFF"
+                android:textSize="50dp"
+                android:fontFamily="sans-serif"/>
+
+            <!-- Third Element -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo: Depósito"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: + 500.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta : *9239"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/discover_card_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha y hora: 27/10/2020, 8:23 pm."
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#FFFFFF"
+                android:textSize="50dp"
+                android:fontFamily="sans-serif"/>
+
+            <!-- Fourth Element-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo: Transferencia"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: - 1000.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta : *1234"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/visa_card_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha y hora: 27/10/2020, 6:23 pm."
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#FFFFFF"
+                android:textSize="50dp"
+                android:fontFamily="sans-serif"/>
+
+            <!-- Fifth Element -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo: Depósito"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: + 5000.00 MXN"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta : *9876"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/discover_card_icon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha y hora: 27/10/2020, 10:23 pm."
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#FFFFFF"
+                android:textSize="50dp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

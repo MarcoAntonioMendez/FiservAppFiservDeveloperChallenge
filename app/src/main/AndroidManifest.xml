@@ -73,6 +73,10 @@
         <activity
             android:name=".MyScheduledPaymentsActivity"
             android:label="@string/title_activity_my_scheduled_payments"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyPaymentsHistoryActivity"
+            android:label="@string/title_activity_my_payments_history"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
