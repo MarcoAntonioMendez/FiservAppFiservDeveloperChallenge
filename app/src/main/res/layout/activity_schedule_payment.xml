@@ -28,11 +28,23 @@
         android:fontFamily="sans-serif"
         android:textSize="18dp"/>
 
+    <EditText
+        android:id="@+id/total_amount_edit_text_in_schedule_payment_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Ingrese el monto a pagar"
+        android:inputType="numberDecimal"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        android:backgroundTint="#FFFFFF"/>
+
     <TextView
         android:id="@+id/schedule_payment_first_instruction_in_schedule_payment_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="210dp"
         android:text="Primero: Elige la fecha en la que desees que el pago se efectúe."
         android:textColor="#FFFFFF"
         android:fontFamily="sans-serif"
@@ -42,7 +54,7 @@
         android:id="@+id/periodicity_tag_in_schedule_payment_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="280dp"
         android:text="Periodicidad:"
         android:textColor="#FFFFFF"
         android:fontFamily="sans-serif"
@@ -52,14 +64,14 @@
         android:id="@+id/periodicity_spinner_in_schedule_payment_activity"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="310dp"
         android:backgroundTint="#ffffff"/>
 
     <TextView
         android:id="@+id/day_tag_in_schedule_payment_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="280dp"
         android:layout_marginLeft="180dp"
         android:text="Día:"
         android:textColor="#FFFFFF"
@@ -70,7 +82,7 @@
         android:id="@+id/day_spinner_in_schedule_payment_activity"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="310dp"
         android:layout_marginLeft="180dp"
         android:backgroundTint="#ffffff"/>
 
@@ -78,7 +90,7 @@
         android:id="@+id/schedule_payment_second_instruction_in_schedule_payment_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="360dp"
         android:text="Segundo: Elige la cuenta de donde quieres que el pago se extraiga."
         android:textColor="#FFFFFF"
         android:fontFamily="sans-serif"
@@ -88,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="410dp"
         android:layout_marginRight="10dp"
         android:background="#DE5900">
         <LinearLayout
@@ -102,7 +114,7 @@
         android:id="@+id/schedule_payment_third_instruction_in_schedule_payment_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="530dp"
         android:text="Tercero: Elige al cliente al cuál le quieres depositar."
         android:textColor="#FFFFFF"
         android:fontFamily="sans-serif"
@@ -112,7 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="570dp"
         android:layout_marginRight="10dp"
         android:background="#DE5900">
         <LinearLayout
@@ -125,7 +137,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="660dp"
+        android:layout_marginTop="710dp"
         android:background="#FF7700"
         android:fontFamily="sans-serif"
         android:text="Agendar el Pago"

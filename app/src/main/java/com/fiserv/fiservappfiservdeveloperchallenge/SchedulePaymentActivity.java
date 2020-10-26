@@ -5,15 +5,18 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -21,9 +24,23 @@ import android.widget.TextView;
 
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.BankAccount;
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.Customer;
+import com.fiserv.fiservappfiservdeveloperchallenge.banking.RestClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.Random;
+
+import cz.msebera.android.httpclient.Header;
+import cz.msebera.android.httpclient.client.HttpResponseException;
 
 public class SchedulePaymentActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
@@ -31,7 +48,11 @@ public class SchedulePaymentActivity extends AppCompatActivity {
     public static final String TRANSPARENT_TEXT_VIEW_BACKGROUND_COLOR = "#FF6600";
     public static final String SELECTED_ACCOUNT_COLOR = "#FFFFFF";
     public static final String ACCOUNT_NOT_SELECTED_COLOR = "#DE5900";
+    public static final String EVERY_MONTH = "Cada Mes";
+    public static final String MONTH_CONSTANT = "MONTH";
+    public static final String YEAR_CONSTANT = "YEAR";
     public static final int PAYMENT_SCHEDULED_SNACK_BAR_DURATION = 3000;
+    public static final int ORDER_NUMBER_SEED = 1000000;
 
     private String userEmail;
     private TextView scheduleYourPaymentTitleTextView,beautifulMessageTextView;
@@ -40,6 +61,9 @@ public class SchedulePaymentActivity extends AppCompatActivity {
     private Spinner periodicitySpinner,daySpinner;
     private LinearLayout accountsLinearLayout,customersLinearLayout;
     private Snackbar paymentScheduledSnackBar;
+    private Random random;
+    private EditText totalAmountOfMoneyEditText;
+    private boolean wasPaymentScheduled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +72,8 @@ public class SchedulePaymentActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setNavigationBarColor(Color.parseColor(NAVIGATION_BAR_COLOR));
         getWindow().setStatusBarColor(Color.parseColor(STATUS_BAR_COLOR));
+        random = new Random();
+        wasPaymentScheduled = false;
 
         userEmail = getIntent().getExtras().getString(AppGlobalConstants.USER_EMAIL_PUT_EXTRA_CONSTANT);
 
@@ -63,6 +89,7 @@ public class SchedulePaymentActivity extends AppCompatActivity {
         accountsLinearLayout = findViewById(R.id.accounts_container_in_schedule_payment_activity);
         schedulePaymentThirdInstructionTextView = findViewById(R.id.schedule_payment_third_instruction_in_schedule_payment_activity);
         customersLinearLayout = findViewById(R.id.customers_container_in_schedule_payment_activity);
+        totalAmountOfMoneyEditText = findViewById(R.id.total_amount_edit_text_in_schedule_payment_activity);
 
 
         // Setting texts for graphic elements
@@ -73,6 +100,66 @@ public class SchedulePaymentActivity extends AppCompatActivity {
 
         // Gets user's customers information
         getUsersCustomersInformation();
+
+        startLoop();
+    }
+
+    /**
+     * A loop that will check if payment was scheduled correctly.
+     */
+    private void startLoop(){
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    try{Thread.sleep(30);}catch(InterruptedException e){e.printStackTrace();}
+                    checkIfSchedulePaymentWasCorrect();
+                }
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+
+    /**
+     * Checks if the scheduling of the payment was correct. If it was set correctly, then the
+     * CompleteMenu.java will start.
+     */
+    private void checkIfSchedulePaymentWasCorrect(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(wasPaymentScheduled){
+                    wasPaymentScheduled = false;
+                    paymentScheduledSnackBar.show();
+                }
+            }
+        });
+    }
+
+    /**
+     * Generates an orderNumber for the scheduling of the payment
+     * @return A String containing the order number.
+     */
+    private String generateOrderNumber(){
+        return Integer.toString(random.nextInt(ORDER_NUMBER_SEED));
+    }
+
+    /**
+     * Gets the current date plus one day in the format YYYY-MM-DD
+     * @return A String containing The current date.
+     */
+    private String getCurrentDatePlusOneDay(){
+        Date today = new Date();
+        Date tomorrow = new Date(today.getTime() + (1000 * 60 * 60 * 24));
+        tomorrow.getTime();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(tomorrow);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1;
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        return Integer.toString(year)+"-"+Integer.toString(month)+"-"+Integer.toString(day);
     }
 
     /**
@@ -80,7 +167,24 @@ public class SchedulePaymentActivity extends AppCompatActivity {
      * saying the payment was scheduled correctly.
      */
     public void scheduledPayment(View view){
-        paymentScheduledSnackBar.show();
+        schedulePaymentUsingRestAPI(totalAmountOfMoneyEditText.getText().toString(),
+                                    generateOrderNumber(),
+                                    getCurrentDatePlusOneDay(),
+                                    daySpinner.getSelectedItem().toString(),
+                                    getSpinnerFrequency());
+        //paymentScheduledSnackBar.show();
+    }
+
+    /**
+     * Thes the selected item in periodicitySpinner with correct format
+     * @return String containing MONTH or YEAR.
+     */
+    private String getSpinnerFrequency(){
+        if(periodicitySpinner.getSelectedItem().toString().equals(EVERY_MONTH)){
+            return MONTH_CONSTANT;
+        }else{
+            return YEAR_CONSTANT;
+        }
     }
 
     /**
@@ -498,6 +602,105 @@ public class SchedulePaymentActivity extends AppCompatActivity {
             @Override
             public void onShown(Snackbar snackbar) { }
         });
+
+        //
+        totalAmountOfMoneyEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus){
+                if(hasFocus){
+                   if(totalAmountOfMoneyEditText.getText().toString().equals("Ingrese el monto a pagar")){
+                       totalAmountOfMoneyEditText.setText("");
+                   }
+                }else{
+                    if(totalAmountOfMoneyEditText.getText().toString().isEmpty()){
+                        totalAmountOfMoneyEditText.setText("Ingrese el monto a pagar");
+                    }
+                }
+            }
+        });
+    }
+
+
+    /**
+     * Schedules the payment according to what user input in the editTexts and spinners
+     * @param total - Total amount of money
+     * @param orderNumber - Random number denoting the order number
+     * @param currentDate - the date in the format 2020-12-30 YYYY-MM-DD
+     * @param day - The day in which the payment will be executed.
+     * @param frequency - The frequency month or year.
+     */
+    private void schedulePaymentUsingRestAPI(String total,String orderNumber,String currentDate,
+                                             String day,String frequency){
+        RestClient client = new RestClient(getApplicationContext());
+
+        try {
+            //Build JSON
+            JSONObject saleTransaction = new JSONObject();
+            saleTransaction.put("purchaseOrderNumber",orderNumber);
+            saleTransaction.put("requestType","PaymentMethodPaymentSchedulesRequest");
+            saleTransaction.put("transactionAmount",
+                    (new JSONObject())
+                            .put("total", total)
+                            .put("currency", "MXN")
+            );
+            saleTransaction.put("startDate",currentDate);
+            saleTransaction.put("frequency",
+                    (new JSONObject())
+                            .put("every", day)
+                            .put("unit", frequency)//MONTH YEAR
+            );
+
+            saleTransaction.put("paymentMethod",new JSONObject().put(
+                    "paymentCard",(new JSONObject())
+                            .put("number", "4004430000000007")
+                            .put("securityCode","111")
+                            .put("expiryDate",(new JSONObject())
+                                    .put("month", "12")
+                                    .put("year", "24"))
+            ));
+
+
+            //send POST HTTP REQUEST
+            client.post("payment-schedules", saleTransaction, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    super.onSuccess(statusCode, headers, response);
+                    wasPaymentScheduled = true;
+                    Log.d("SuccessObj", response.toString());
+                }
+
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                    super.onSuccess(statusCode, headers, response);
+                    //handle success when response is an array of objects
+                    Log.d("SuccessArr", response.toString());
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                    super.onFailure(statusCode, headers, throwable, errorResponse);
+                    //handle error when response is an array of objects
+                    Log.d("ErrorArr", errorResponse.toString());
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    super.onFailure(statusCode, headers, throwable, errorResponse);
+                    //handle success when response is a single object
+                    Log.d("ErrorObj", errorResponse.toString());
+                }
+            });
+
+        }catch (HttpResponseException ex){
+            Log.d("HttpResponseException", ex.getMessage());
+        }
+        catch (JSONException ex){
+            Log.d("JSONException", ex.getMessage());
+        }
+        catch (Exception ex){
+            Log.d("Exception", ex.getMessage());
+        }
+
     }
 
 }
