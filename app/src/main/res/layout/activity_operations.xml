@@ -23,7 +23,8 @@
         android:layout_height="103dp"
         android:layout_marginTop="55dp"
         app:srcCompat="@drawable/operations_activity_transfer_icon"
-        android:onClick="startTransferMoneyActivity"/>
+        android:onClick="startTransferMoneyActivity"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/operations_transfer_text_view"
@@ -33,7 +34,8 @@
         android:gravity="center_horizontal"
         android:text="Transferir"
         android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/operations_account_text_view"

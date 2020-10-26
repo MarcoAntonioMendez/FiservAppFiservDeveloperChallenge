@@ -130,7 +130,7 @@ public class CompleteMenu extends AppCompatActivity {
                 paymentsTextView.setText("Pagos");
                 schedulePaymentTextView.setText("Agendar Pago");
                 myScheduledPaymentsTextView.setText("Mis Pagos Agendados");
-                myPaymentsHistoryTextView.setText("Mis Pagos Agendados");
+                myPaymentsHistoryTextView.setText("Mis Historial de Pagos");
                 customersTextView.setText("Clientes");
                 generatePaymentUrlTextView.setText("Generar URL de Pago");
                 myCustomersTextView.setText("Mis Clientes");
