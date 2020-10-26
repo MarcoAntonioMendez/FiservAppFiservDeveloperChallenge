@@ -7,4 +7,86 @@
     tools:context=".TokenVerificationActivity"
     android:background="#ff6600">
 
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="¡Tarjeta Registrada Exitosamente!"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="Presiona Aquí Para Continuar"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"
+        android:background="#FF7700"
+        android:onClick="goBackToOperationsActivityFromTokenVerificationActivity"/>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:gravity="center"
+        android:text="Algunos datos de la transacción: "
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/client_request_id_token_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="clientResquestId: "
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/api_trace_id_token_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:text="apiTraceId: "
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/order_id_token_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:text="orderId: "
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/last_four_digits_token_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:text="last4: "
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
+
+    <TextView
+        android:id="@+id/brand_token_verification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:text="brand: "
+        android:textSize="15dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif"/>
 </android.support.design.widget.CoordinatorLayout>
