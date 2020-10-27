@@ -118,43 +118,18 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     /**
-     * According to language, graphic components are assigned the text.
-     * In case the device's language is not supported, the text will be assigned to english.
-     * Languages Supported: English, Spanish.
+     * Text is assigned to graphic elementsa and listeners for editTexts are set.
      */
     private void setTextForGraphicComponents(){
-        switch(language){
-            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                helloTextView.setText("Hello");
-                enterUserEmailEditText.setText("E-mail");
-                enterInformationButton.setText("Enter");
-                informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
-                        "Sorry :(, your e-mail or password are incorrect, please try again.",
-                        INFORMATION_INCORRECT_SNACK_BAR_DURATION);
-                dontAnAccountRegisterTextView.setText("New User? Sign Up!");
-                forgotMyPasswordTextView.setText("I Forgot my Password");
-            break;
-            case AppGlobalConstants.SPANISH_LANGUAGE:
-                helloTextView.setText("Hola");
-                enterUserEmailEditText.setText("Correo Electrónico");
-                enterInformationButton.setText("Entrar");
-                informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
-                        "Lo sentimos :(, su correo electrónico o contraseña son incorrectos," +
-                             " por favor inténtelo de nuevo.",
-                        INFORMATION_INCORRECT_SNACK_BAR_DURATION);
-                dontAnAccountRegisterTextView.setText("¿No tienes cuenta? ¡Regístrate!");
-                forgotMyPasswordTextView.setText("Olvidé mi Contraseña");
-            break;
-            default:
-                helloTextView.setText("Hello");
-                enterUserEmailEditText.setText("E-mail");
-                enterInformationButton.setText("Enter");
-                informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
-                        "Sorry :(, your e-mail or password are incorrect, please try again.",
-                        INFORMATION_INCORRECT_SNACK_BAR_DURATION);
-                dontAnAccountRegisterTextView.setText("New User? Sign Up!");
-                forgotMyPasswordTextView.setText("I Forgot my Password");
-        }
+        helloTextView.setText("Hola");
+        enterUserEmailEditText.setText("Correo Electrónico");
+        enterInformationButton.setText("Entrar");
+        informationIncorrectSnackBar = Snackbar.make(findViewById(R.id.log_in_coordinator_layout),
+                "Lo sentimos :(, su correo electrónico o contraseña son incorrectos," +
+                        " por favor inténtelo de nuevo.",
+                INFORMATION_INCORRECT_SNACK_BAR_DURATION);
+        dontAnAccountRegisterTextView.setText("¿No tienes cuenta? ¡Regístrate!");
+        forgotMyPasswordTextView.setText("Olvidé mi Contraseña");
 
         // Clears the e-mail EditText when user touches it.
         enterUserEmailEditText.setOnTouchListener(new View.OnTouchListener()
