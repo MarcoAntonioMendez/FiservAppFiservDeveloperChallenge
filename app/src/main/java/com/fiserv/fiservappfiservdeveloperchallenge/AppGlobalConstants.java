@@ -1,8 +1,14 @@
 package com.fiserv.fiservappfiservdeveloperchallenge;
 
-public class AppGlobalConstants {
-    public static final String ENGLISH_LANGUAGE = "en";
-    public static final String SPANISH_LANGUAGE = "es";
+/**
+ * The AppGlobalConstants contains constants that used across of various activities.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
+
+public class AppGlobalConstants{
 
     public static final String USER_EMAIL_PUT_EXTRA_CONSTANT = "USER_EMAIL_PUT_EXTRA_CONSTANT";
 

@@ -16,7 +16,7 @@ import javax.crypto.spec.SecretKeySpec;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
 /**
- * The RestClient class sends HTTP petitions to Fiserv Server to execute finance and banking
+ * The RestClient class sends HTTP petitions to Fiserv server to execute finance and banking
  * operations.
  *
  * Important: In order for this class to work, the API_KEY and API_SECRET constants should be filled
@@ -40,7 +40,7 @@ public class RestClient {
         this.client = new AsyncHttpClient();
         this.appContext = ctx;
     }
-    
+
     public void get(String url, @Nullable JSONObject data, AsyncHttpResponseHandler responseHandler) throws  Exception{
         String jsonString = data==null?"":data.toString();
         this.setHeaders(jsonString);

@@ -4,18 +4,20 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Locale;
-
-import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
+/**
+ * The ForgotMyPasswordActivity class helps the user to start a process to recover his/her password.
+ * The user will only have to enter his/her e-mail and Fiserv's customer service will do the rest.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
 
 public class ForgotMyPasswordActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";

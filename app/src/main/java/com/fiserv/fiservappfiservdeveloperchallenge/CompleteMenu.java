@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Locale;
+/**
+ * The CompleteMenu class is in charge of displaying all of the options and actions to do for the
+ * user; from Scheduling a recurring payment to asking help to Fiserv operators.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
 
 public class CompleteMenu extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
