@@ -3,23 +3,28 @@ package com.fiserv.fiservappfiservdeveloperchallenge;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.BankAccount;
 
 import java.util.ArrayList;
-import java.util.Locale;
+
+/**
+ * The OperationsActivity class will display user's registered payment cards, also the user can
+ * logout or enter the CompleteMenu.java
+ *
+ * The class greets the user nicely :D
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
 
 public class OperationsActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";

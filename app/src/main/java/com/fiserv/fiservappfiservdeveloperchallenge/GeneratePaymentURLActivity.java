@@ -23,10 +23,11 @@ import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.HttpResponseException;
 
 /**
- * The GeneratePaymentURLActivity class will allow the user to schedule a recurring payment
- * according to his/her necessities.
+ * The GeneratePaymentURLActivity class will allow the user to generate a payment URL for a
+ * customer, also the user will be able to send the URL through WhatsApp or e-mail
  *
- * The class will send the appropriate HTTP petitions to Fiserv server so a payment can be scheduled.
+ * The class will send the appropriate HTTP petitions to Fiserv server so an URL payment can be
+ * generated.
  *
  * @author  MarcoAntonioMéndez
  * @version 1.0
