@@ -47,7 +47,7 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
         repeatPasswordEditText = findViewById(R.id.repeat_password_register_new_fiserv_app_user);
         registerButton = findViewById(R.id.register_me_button_in_register_new_fiserv_app_user);
 
-        // Sets the text for all graphic components according to the language
+        // Sets the text for all graphic components
         setTextForGraphicComponents();
 
         setListenerForEditTexts();
@@ -85,50 +85,39 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
      * initial states if they are left empty after user tried to type something.
      */
     private void setListenerForEditTexts(){
-        String englishText,spanishText;
+        String spanishText;
 
         // Setting the listeners for each editText
-        englishText = "Full Legal Name";spanishText = "Nombre Completo";
-        setEditTextListenerIndividually(completeNameEditText,englishText,spanishText);
+        spanishText = "Nombre Completo";
+        setEditTextListenerIndividually(completeNameEditText,spanishText);
 
-        englishText = "E-mail";spanishText = "Correo Electrónico";
-        setEditTextListenerIndividually(emailEditText,englishText,spanishText);
+        spanishText = "Correo Electrónico";
+        setEditTextListenerIndividually(emailEditText,spanishText);
 
-        englishText = "Phone Number";spanishText = "Número Telefónico";
-        setEditTextListenerIndividually(phoneNumberEditText,englishText,spanishText);
+        spanishText = "Número Telefónico";
+        setEditTextListenerIndividually(phoneNumberEditText,spanishText);
 
-        englishText = "Password";spanishText = "Contraseña";
-        setEditTextListenerIndividually(passwordEditText,englishText,spanishText);
+        spanishText = "Contraseña";
+        setEditTextListenerIndividually(passwordEditText,spanishText);
 
-        englishText = "Repeat Password";spanishText = "Repetir Contraseña";
-        setEditTextListenerIndividually(repeatPasswordEditText,englishText,spanishText);
+        spanishText = "Repetir Contraseña";
+        setEditTextListenerIndividually(repeatPasswordEditText,spanishText);
     }
 
     /**
      * Sets the listener to an specific editText, if the user is typing on the editText and then
      * leaves it empty, that editText will go back to its initial state.
      * @param editText - The edit text to set its focus listener.
-     * @param englishText - The text that should be placed in an empty editText (in english).
      * @param spanishText - The text that should be placed in an empty editText (in spanish).
      */
-    private void setEditTextListenerIndividually(final EditText editText,final String englishText,
-                                                 final String spanishText){
+    private void setEditTextListenerIndividually(final EditText editText,final String spanishText){
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus){
                 if(!hasFocus){
                     // Checking if user left the editText empty
                     if(editText.getText().toString().isEmpty()){
-                        switch(Locale.getDefault().getLanguage()){
-                            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                                editText.setText(englishText);
-                                break;
-                            case AppGlobalConstants.SPANISH_LANGUAGE:
-                                editText.setText(spanishText);
-                                break;
-                            default:
-                                editText.setText(englishText);
-                        }
+                        editText.setText(spanishText);
 
                         // If that editText was for passwords, it goes back to normal input
                         if(editText.equals(passwordEditText)){
@@ -138,7 +127,6 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
                         }
                     }
                 }else{
-
                     // If the user is typing his/her password, the input type should change.
                     if(editText.equals(passwordEditText)){
                         editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -151,54 +139,20 @@ public class RegisterNewFiservAppUser extends AppCompatActivity {
     }
 
     /**
-     * Sets the text for all graphic components according to the language,
-     * Supported Languages for now: English and Spanish.
+     * Sets the text for graphic elements
      */
     private void setTextForGraphicComponents(){
-        String language = Locale.getDefault().getLanguage();
-
-        switch(language){
-            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                welcomeTextView.setText("Welcome");
-                awesomeExperienceTextView.setText("Sign Up to have the best banking experience!");
-                completeNameEditText.setText("Full Legal Name");
-                emailEditText.setText("E-mail");
-                phoneNumberEditText.setText("Phone Number");
-                passwordEditText.setText("Password");
-                repeatPasswordEditText.setText("Repeat Password");
-                passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
-                        "Sorry :(, it looks like the passwords you entered don't match, please" +
-                                " make sure they are the same.",
-                        PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
-                registerButton.setText("Sign Me Up!");
-            break;
-            case AppGlobalConstants.SPANISH_LANGUAGE:
-                welcomeTextView.setText("Bienvenido");
-                awesomeExperienceTextView.setText("¡Regístrate para tener la mejor experiencia bancaria!");
-                completeNameEditText.setText("Nombre completo");
-                emailEditText.setText("Correo Electrónico");
-                phoneNumberEditText.setText("Número Telefónico");
-                passwordEditText.setText("Contraseña");
-                repeatPasswordEditText.setText("Repetir Contraseña");
-                passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
-                        "Lo sentimos :(, parece ser que las contraseñas que ingresó no son iguales.",
-                        PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
-                registerButton.setText("¡Regístrame!");
-            break;
-            default:
-                welcomeTextView.setText("Welcome");
-                awesomeExperienceTextView.setText("Sign Up to have the best banking experience!");
-                completeNameEditText.setText("Full Legal Name");
-                emailEditText.setText("E-mail");
-                phoneNumberEditText.setText("Phone Number");
-                passwordEditText.setText("Password");
-                repeatPasswordEditText.setText("Repeat Password");
-                passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
-                        "Sorry :(, it looks like the passwords you entered don't match, please" +
-                                " make sure they are the same.",
-                        PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
-                registerButton.setText("Sign Me Up!");
-        }
+        welcomeTextView.setText("Bienvenido");
+        awesomeExperienceTextView.setText("¡Regístrate para tener la mejor experiencia bancaria!");
+        completeNameEditText.setText("Nombre completo");
+        emailEditText.setText("Correo Electrónico");
+        phoneNumberEditText.setText("Número Telefónico");
+        passwordEditText.setText("Contraseña");
+        repeatPasswordEditText.setText("Repetir Contraseña");
+        passwordsDontMatchtSnackBar = Snackbar.make(findViewById(R.id.register_new_fiserv_app_user_coordinator_layout_id),
+                "Lo sentimos :(, parece ser que las contraseñas que ingresó no son iguales.",
+                PASSWORDS_DONT_MATCH_SNACK_BAR_DURATION);
+        registerButton.setText("¡Regístrame!");
     }
 
 }
