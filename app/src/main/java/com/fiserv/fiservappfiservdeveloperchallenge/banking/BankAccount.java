@@ -1,5 +1,15 @@
 package com.fiserv.fiservappfiservdeveloperchallenge.banking;
 
+/**
+ * The BankAccount class offers a container for all bank accounts from the user to be used in the
+ * app.
+ * Contains the necessary setters and getters.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
+
 public class BankAccount{
     public static final String COMPANY_VISA_CONSTANT = "VISA";
     public static final String COMPANY_MASTERCARD_CONSTANT = "MASTERCARD";

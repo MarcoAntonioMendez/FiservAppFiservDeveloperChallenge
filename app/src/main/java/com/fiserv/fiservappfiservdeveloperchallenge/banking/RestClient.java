@@ -15,6 +15,18 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
+/**
+ * The RestClient class sends HTTP petitions to Fiserv Server to execute finance and banking
+ * operations.
+ *
+ * Important: In order for this class to work, the API_KEY and API_SECRET constants should be filled
+ * by the developer using his/her respective credentials.
+ *
+ * @author  MarcoAntonioMéndez,Fiserv Developing Team.
+ * @version 1.0
+ * @since   2020-10-26
+ */
+
 public class RestClient {
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();//used for hmac sha256
     private static final String BASE_URL = "https://cert.api.firstdata.com/gateway/v2/";
@@ -28,7 +40,7 @@ public class RestClient {
         this.client = new AsyncHttpClient();
         this.appContext = ctx;
     }
-
+    
     public void get(String url, @Nullable JSONObject data, AsyncHttpResponseHandler responseHandler) throws  Exception{
         String jsonString = data==null?"":data.toString();
         this.setHeaders(jsonString);

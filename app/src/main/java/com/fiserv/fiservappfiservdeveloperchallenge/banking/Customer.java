@@ -1,5 +1,14 @@
 package com.fiserv.fiservappfiservdeveloperchallenge.banking;
 
+/**
+ * The Customer class offers a container for customers information and to be displayed accordingly.
+ * Contains the necessary setters and getters.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
+
 public class Customer {
     private String customerId,bankAccountNumber,customerName,company;
 
