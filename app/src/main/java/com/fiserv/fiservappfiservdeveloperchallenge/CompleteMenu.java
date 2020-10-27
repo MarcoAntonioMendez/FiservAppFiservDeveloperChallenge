@@ -51,7 +51,7 @@ public class CompleteMenu extends AppCompatActivity {
         whyUseFiservTextView = findViewById(R.id.why_fiserv_in_complete_menu);
         rateUsTextView = findViewById(R.id.rate_us_in_complete_menu);
 
-        // Setting the text for graphic elements, according to language.
+        // Setting the text for graphic elements
         setTextForGraphicElements();
     }
 
@@ -141,61 +141,23 @@ public class CompleteMenu extends AppCompatActivity {
     }
 
     /**
-     * Places the text for graphic elements according to the language, the app only supports spanish
-     * an english right now.
+     * Sets the text for graphic elements.
      */
     private void setTextForGraphicElements(){
-        String language = Locale.getDefault().getLanguage();
-
-        switch(language){
-            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                paymentsTextView.setText("Payments");
-                schedulePaymentTextView.setText("Schedule Payment");
-                myScheduledPaymentsTextView.setText("My Schedule Payments");
-                myPaymentsHistoryTextView.setText("My Payments History");
-                customersTextView.setText("Customers");
-                generatePaymentUrlTextView.setText("Generate Payment URL");
-                myCustomersTextView.setText("My Customers");
-                registerNewCustomerTextView.setText("Register New Customer");
-                profileTextView.setText("Profile");
-                registerNewAccountTextView.setText("Register New Account");
-                communicateTextView.setText("Contact");
-                contactFiservRepresentativeTextView.setText("Help");
-                whyUseFiservTextView.setText("Why Fiserv?");
-                rateUsTextView.setText("Rate Us");
-            break;
-            case AppGlobalConstants.SPANISH_LANGUAGE:
-                paymentsTextView.setText("Pagos");
-                schedulePaymentTextView.setText("Agendar Pago");
-                myScheduledPaymentsTextView.setText("Mis Pagos Agendados");
-                myPaymentsHistoryTextView.setText("Mis Historial de Pagos");
-                customersTextView.setText("Clientes");
-                generatePaymentUrlTextView.setText("Generar URL de Pago");
-                myCustomersTextView.setText("Mis Clientes");
-                registerNewCustomerTextView.setText("Registrar Nuevo Cliente");
-                profileTextView.setText("Perfil");
-                registerNewAccountTextView.setText("Registrar una Nueva Cuenta");
-                communicateTextView.setText("Contáctanos");
-                contactFiservRepresentativeTextView.setText("Ayuda");
-                whyUseFiservTextView.setText("¿Por qué Fiserv?");
-                rateUsTextView.setText("Califícanos");
-            break;
-            default:
-                paymentsTextView.setText("Payments");
-                schedulePaymentTextView.setText("Schedule Payment");
-                myScheduledPaymentsTextView.setText("My Schedule Payments");
-                myPaymentsHistoryTextView.setText("My Payments History");
-                customersTextView.setText("Customers");
-                generatePaymentUrlTextView.setText("Generate Payment URL");
-                myCustomersTextView.setText("My Customers");
-                registerNewCustomerTextView.setText("Register New Customer");
-                profileTextView.setText("Profile");
-                registerNewAccountTextView.setText("Register New Account");
-                communicateTextView.setText("Contact");
-                contactFiservRepresentativeTextView.setText("Help");
-                whyUseFiservTextView.setText("Why Fiserv?");
-                rateUsTextView.setText("Rate Us");
-        }
+        paymentsTextView.setText("Pagos");
+        schedulePaymentTextView.setText("Agendar Pago");
+        myScheduledPaymentsTextView.setText("Mis Pagos Agendados");
+        myPaymentsHistoryTextView.setText("Mis Historial de Pagos");
+        customersTextView.setText("Clientes");
+        generatePaymentUrlTextView.setText("Generar URL de Pago");
+        myCustomersTextView.setText("Mis Clientes");
+        registerNewCustomerTextView.setText("Registrar Nuevo Cliente");
+        profileTextView.setText("Perfil");
+        registerNewAccountTextView.setText("Registrar una Nueva Cuenta");
+        communicateTextView.setText("Contáctanos");
+        contactFiservRepresentativeTextView.setText("Ayuda");
+        whyUseFiservTextView.setText("¿Por qué Fiserv?");
+        rateUsTextView.setText("Califícanos");
     }
 
 }
