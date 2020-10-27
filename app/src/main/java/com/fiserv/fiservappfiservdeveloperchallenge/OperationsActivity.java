@@ -27,8 +27,8 @@ public class OperationsActivity extends AppCompatActivity {
     public static final String TRANSPARENT_TEXT_VIEW_BACKGROUND_COLOR = "#FF6600";
     public static final String USER_NAME = "USER_NAME";
 
-    private String userName,language,userEmail;
-    private TextView greetUserTextView,transferTextView,accountsTextView,logOutTextView;
+    private String userName,userEmail;
+    private TextView greetUserTextView,accountsTextView,logOutTextView;
     private TextView plusSignTextView;
     private LinearLayout accountsLinearLayout;
 
@@ -40,11 +40,8 @@ public class OperationsActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(Color.parseColor(NAVIGATION_BAR_COLOR));
         getWindow().setStatusBarColor(Color.parseColor(STATUS_BAR_COLOR));
 
-        language = Locale.getDefault().getLanguage();
-
         // Getting graphic components from xml file
         greetUserTextView = findViewById(R.id.greet_user_text_view_operations);
-        transferTextView = findViewById(R.id.operations_transfer_text_view);
         accountsTextView = findViewById(R.id.operations_account_text_view);
         accountsLinearLayout = findViewById(R.id.linear_layout_for_accounts);
         logOutTextView = findViewById(R.id.log_out_text_view_in_operations_activity);
@@ -216,27 +213,10 @@ public class OperationsActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         String type = "";
 
-        switch(language){
-            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                if(account.getType().equals(BankAccount.DEBIT_TYPE_CONSTANT)){
-                    type = "Debit";
-                }else if(account.getType().equals(BankAccount.CREDIT_TYPE_CONSTANT)){
-                    type = "Credit";
-                }
-                break;
-            case AppGlobalConstants.SPANISH_LANGUAGE:
-                if(account.getType().equals(BankAccount.DEBIT_TYPE_CONSTANT)){
-                    type = "Débito";
-                }else if(account.getType().equals(BankAccount.CREDIT_TYPE_CONSTANT)){
-                    type = "Crédito";
-                }
-                break;
-            default:
-                if(account.getType().equals(BankAccount.DEBIT_TYPE_CONSTANT)){
-                    type = "Debit";
-                }else if(account.getType().equals(BankAccount.CREDIT_TYPE_CONSTANT)){
-                    type = "Credit";
-                }
+        if(account.getType().equals(BankAccount.DEBIT_TYPE_CONSTANT)){
+            type = "Débito";
+        }else if(account.getType().equals(BankAccount.CREDIT_TYPE_CONSTANT)){
+            type = "Crédito";
         }
 
         textView.setTypeface(Typeface.SANS_SERIF);
@@ -318,33 +298,13 @@ public class OperationsActivity extends AppCompatActivity {
     }
 
     /**
-     * According to language, graphic components are assigned the text.
-     * In case the device's language is not supported, the text will be assigned to english.
-     * Languages Supported: English, Spanish.
+     * Graphic components are assigned the text.
      */
     private void setTextForGraphicComponents(){
-        switch(language){
-            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                greetUserTextView.setText("Hello, " + userName);
-                transferTextView.setText("Transfer");
-                accountsTextView.setText("Your Accounts");
-                logOutTextView.setText("Exit");
-                plusSignTextView.setText("More");
-            break;
-            case AppGlobalConstants.SPANISH_LANGUAGE:
-                greetUserTextView.setText("Hola, " + userName);
-                transferTextView.setText("Transferir");
-                accountsTextView.setText("Tus Cuentas");
-                logOutTextView.setText("Salir");
-                plusSignTextView.setText("Más");
-            break;
-            default:
-                greetUserTextView.setText("Hello, " + userName);
-                transferTextView.setText("Transfer");
-                accountsTextView.setText("Your Accounts");
-                logOutTextView.setText("Exit");
-                plusSignTextView.setText("More");
-        }
+        greetUserTextView.setText("Hola, " + userName);
+        accountsTextView.setText("Tus Cuentas");
+        logOutTextView.setText("Salir");
+        plusSignTextView.setText("Más");
     }
 
     @Override

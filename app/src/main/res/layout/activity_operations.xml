@@ -17,25 +17,6 @@
         android:textColor="#FFFFFF"
         android:textSize="35dp" />
 
-    <ImageView
-        android:id="@+id/operations_transfer_money_icon"
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="55dp"
-        app:srcCompat="@drawable/operations_activity_transfer_icon"
-        android:visibility="invisible"/>
-
-    <TextView
-        android:id="@+id/operations_transfer_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:gravity="center_horizontal"
-        android:text="Transferir"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        android:visibility="invisible"/>
-
     <TextView
         android:id="@+id/operations_account_text_view"
         android:layout_width="match_parent"
