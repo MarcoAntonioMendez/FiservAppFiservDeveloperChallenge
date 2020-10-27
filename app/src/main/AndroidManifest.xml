@@ -51,10 +51,6 @@
             android:label="@string/title_activity_generate_payment_url"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TransferMoneyActivity"
-            android:label="@string/title_activity_transfer_money"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".WhyUsActivity"
             android:label="@string/title_activity_why_us"
             android:theme="@style/AppTheme.NoActionBar" />

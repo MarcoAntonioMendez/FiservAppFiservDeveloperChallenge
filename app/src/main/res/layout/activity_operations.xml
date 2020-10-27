@@ -23,7 +23,6 @@
         android:layout_height="103dp"
         android:layout_marginTop="55dp"
         app:srcCompat="@drawable/operations_activity_transfer_icon"
-        android:onClick="startTransferMoneyActivity"
         android:visibility="invisible"/>
 
     <TextView
