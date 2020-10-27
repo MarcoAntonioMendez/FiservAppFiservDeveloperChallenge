@@ -43,7 +43,8 @@ public class ForgotMyPasswordActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * This method starts the LogInActivity, in the final form of this possible app, it should send
+     * an e-mail to user with instructions about how to recover its password.
      */
     public void sendEmailAndStartLogInActivity(View view){
        Intent intent = new Intent(this,LogInActivity.class);
@@ -51,54 +52,24 @@ public class ForgotMyPasswordActivity extends AppCompatActivity {
     }
 
     /**
-     * Sets the text for all graphic components according to the language.
-     * Supported languages: English, Spanish.
+     * Sets the text for all graphic components
      */
     private void setGraphicComponentsText(){
-        String language = Locale.getDefault().getLanguage();
-
-        switch(language){
-            case AppGlobalConstants.ENGLISH_LANGUAGE:
-                dontWorryTetView.setText("Don't worry if you forgot your password, just enter your" +
-                        " email we'll send you en email with the instructions to follow :D.");
-                emailEditText.setText("E-mail");
-                sendEmailButton.setText("Send");
-            break;
-            case AppGlobalConstants.SPANISH_LANGUAGE:
-                dontWorryTetView.setText("No te preocupes si olvidaste tu contraseña, sólo ingresa" +
-                        " tu correo electrónico y te enviaremos un correo electrónico con las " +
-                        " instrucciones a seguir :D.");
-                emailEditText.setText("Correo Electrónico");
-                sendEmailButton.setText("Enviar");
-            break;
-            default:
-                dontWorryTetView.setText("Don't worry if you forgot your password, just enter your" +
-                        " email we'll send you en email with the instructions to follow :D.");
-                emailEditText.setText("E-mail");
-                sendEmailButton.setText("Send");
-        }
+        dontWorryTetView.setText("No te preocupes si olvidaste tu contraseña, sólo ingresa" +
+                " tu correo electrónico y te enviaremos un correo electrónico con las " +
+                " instrucciones a seguir :D.");
+        emailEditText.setText("Correo Electrónico");
+        sendEmailButton.setText("Enviar");
 
         // Setting a listener for emailEditText
         emailEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus){
                 if(hasFocus){
-                   switch(Locale.getDefault().getLanguage()){
-                       case AppGlobalConstants.ENGLISH_LANGUAGE:
-                           if(emailEditText.getText().toString().equals("E-mail")){
-                               emailEditText.setText("");
-                           }
-                       break;
-                       case AppGlobalConstants.SPANISH_LANGUAGE:
-                           if(emailEditText.getText().toString().equals("Correo Electrónico")){
-                               emailEditText.setText("");
-                           }
-                       break;
-                       default:
-                           if(emailEditText.getText().toString().equals("E-mail")){
-                               emailEditText.setText("");
-                           }
-                   }
+                    if(emailEditText.getText().toString().equals("Correo Electrónico")){
+                        emailEditText.setText("");
+                    }
+
                 }
             }
         });
