@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +13,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Locale;
+
+/**
+ * The LogInActivity class will allow the user to enter his/her credentials so access to FiservApp
+ * can be granted.
+ * User will also be able to enter respective activities if he/she does not have and account or if
+ * the password was forgotten.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
 
 public class LogInActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";

@@ -8,15 +8,18 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import static android.Manifest.permission.CALL_PHONE;
+/**
+ * The HelpActivity class will offer the user options to contact Fiserv's customer service by phone
+ * or e-mail.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
 
 public class HelpActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";

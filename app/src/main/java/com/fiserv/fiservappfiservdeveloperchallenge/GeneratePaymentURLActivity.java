@@ -5,17 +5,12 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ThemedSpinnerAdapter;
 
 import com.fiserv.fiservappfiservdeveloperchallenge.banking.RestClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -24,24 +19,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.sql.Timestamp;
-import java.util.Date;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.net.ssl.HttpsURLConnection;
-
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.HttpResponseException;
+
+/**
+ * The GeneratePaymentURLActivity class will allow the user to schedule a recurring payment
+ * according to his/her necessities.
+ *
+ * The class will send the appropriate HTTP petitions to Fiserv server so a payment can be scheduled.
+ *
+ * @author  MarcoAntonioMéndez
+ * @version 1.0
+ * @since   2020-10-26
+ */
 
 public class GeneratePaymentURLActivity extends AppCompatActivity {
     public static final String NAVIGATION_BAR_COLOR = "#FE3412";
